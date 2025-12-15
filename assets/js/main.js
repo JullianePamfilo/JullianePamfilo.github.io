@@ -1,122 +1,71 @@
 /**
  * main.js
- *
- * I use this file to handle all interactive behavior for the portfolio.
- * My goal here is to keep JavaScript concerns separate from HTML structure
- * and CSS presentation, while improving usability and visual feedback.
+ * I use this file to progressively enhance the portfolio
+ * without ever hiding core content.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ================================
-     Smooth scrolling for internal links
-     ================================ */
-  const internalLinks = document.querySelectorAll('a[href^="#"]');
+  /* ===============================
+     THEME TOGGLE
+  ================================ */
 
-  internalLinks.forEach(link => {
-    link.addEventListener("click", event => {
-      const targetId = link.getAttribute("href");
-      const targetEl = document.querySelector(targetId);
+  const toggleBtn = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("theme");
 
-      // I guard against broken anchors to avoid runtime errors
-      if (!targetEl) return;
+  if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }
 
-      event.preventDefault();
-      targetEl.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
+  toggleBtn?.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
   });
 
+  /* ===============================
+     SECTION REVEAL (SAFE)
+  ================================ */
 
-  /* ================================
-     Reveal animations on scroll
-     ================================ */
-  const revealSections = document.querySelectorAll(".reveal");
+  const sections = document.querySelectorAll(".reveal");
 
-  const revealObserver = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
-          // Once revealed, I stop observing for performance
-          revealObserver.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.15
-    }
+    { threshold: 0.2 }
   );
 
-  revealSections.forEach(section => {
-    revealObserver.observe(section);
-  });
+  sections.forEach(section => observer.observe(section));
 
+  /* ===============================
+     ACTIVE NAV LINK
+  ================================ */
 
-  /* ================================
-     Active navigation state tracking
-     ================================ */
   const navLinks = document.querySelectorAll(".nav a");
-  const sections = document.querySelectorAll("section[id]");
 
-  const setActiveNav = () => {
-    let currentSection = "";
+  window.addEventListener("scroll", () => {
+    let current = "";
 
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
-        currentSection = section.getAttribute("id");
+      const top = section.offsetTop - 120;
+      if (window.scrollY >= top) {
+        current = section.id;
       }
     });
 
     navLinks.forEach(link => {
       link.classList.remove("active");
-      if (link.getAttribute("href") === `#${currentSection}`) {
+      if (link.getAttribute("href") === `#${current}`) {
         link.classList.add("active");
       }
     });
-  };
-
-  window.addEventListener("scroll", setActiveNav);
-
-
-  /* ================================
-     Scroll progress indicator
-     ================================ */
-  const progressBar = document.createElement("div");
-  progressBar.style.position = "fixed";
-  progressBar.style.top = "0";
-  progressBar.style.left = "0";
-  progressBar.style.height = "3px";
-  progressBar.style.width = "0%";
-  progressBar.style.background = "linear-gradient(90deg, #7c9cff, #a78bfa)";
-  progressBar.style.zIndex = "9999";
-  document.body.appendChild(progressBar);
-
-  const updateProgress = () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
-    progressBar.style.width = `${progress}%`;
-  };
-
-  window.addEventListener("scroll", updateProgress);
-
-
-  /* ================================
-     Accessibility & reduced motion
-     ================================ */
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  if (prefersReducedMotion.matches) {
-    // If the user prefers reduced motion, I disable animations
-    revealSections.forEach(section => {
-      section.classList.add("active");
-    });
-    progressBar.style.display = "none";
-  }
+  });
 
 });
-
