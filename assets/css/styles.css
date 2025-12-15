@@ -1,30 +1,30 @@
-/* ========== GLOBAL RESET ========== */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ================= BASE ================= */
 body {
-  font-family: "Inter", sans-serif;
-  background: radial-gradient(circle at top, #121826, #06080f);
+  font-family: Inter, sans-serif;
+  background: radial-gradient(circle at top, #121830, #05070f);
   color: #eaeaf0;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* ========== NAV ========== */
-.site-header {
+/* ================= HEADER ================= */
+.header {
   position: fixed;
   top: 0;
   width: 100%;
+  background: rgba(5, 7, 15, 0.85);
   backdrop-filter: blur(12px);
-  background: rgba(6, 8, 15, 0.75);
   z-index: 1000;
 }
 
-.nav-container {
-  max-width: 1200px;
+.nav {
+  max-width: 1100px;
   margin: auto;
   padding: 1rem 2rem;
   display: flex;
@@ -33,191 +33,159 @@ body {
 }
 
 .logo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.4rem;
+  font-weight: 600;
   letter-spacing: 2px;
 }
 
 .nav-links a,
 .nav-links button {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: #eaeaf0;
-  font-size: 0.9rem;
+  margin-left: 1.2rem;
   background: none;
   border: none;
+  color: #eaeaf0;
+  font-size: 0.9rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
-/* ========== HERO ========== */
+/* ================= HERO ================= */
 .hero {
   min-height: 100vh;
-  padding: 8rem 2rem 4rem;
+  padding: 9rem 2rem 4rem;
   text-align: center;
-  position: relative;
 }
 
 .hero h1 {
-  font-family: "Playfair Display", serif;
   font-size: 3.2rem;
+  font-weight: 600;
 }
 
 .hero h2 {
-  font-weight: 300;
   margin-top: 0.5rem;
-  color: #aab0ff;
+  font-weight: 300;
+  color: #9aa5ff;
 }
 
-.hero-subtext {
+.hero-text {
   max-width: 720px;
   margin: 2rem auto;
   color: #cfd3ff;
 }
 
-.hero-actions {
+.hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
-.hero-glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(140,160,255,0.35), transparent 60%);
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
-}
-
-/* ========== BUTTONS ========== */
-.btn {
-  padding: 0.7rem 1.4rem;
+/* ================= BUTTONS ================= */
+.btn-primary {
+  padding: 0.75rem 1.6rem;
+  background: linear-gradient(135deg, #9aa5ff, #6c79ff);
+  color: #05070f;
   border-radius: 999px;
+  text-decoration: none;
   font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
-.btn.primary {
-  background: linear-gradient(135deg, #8c9eff, #5c6cff);
-  color: #05070d;
-}
-
-.btn.primary:hover {
+.btn-primary:hover {
   transform: translateY(-2px);
 }
 
-.btn.ghost {
-  border: 1px solid rgba(255,255,255,0.25);
-  color: #fff;
+.btn-outline {
+  padding: 0.75rem 1.6rem;
+  border: 1px solid #9aa5ff;
+  border-radius: 999px;
+  background: none;
+  color: #eaeaf0;
+  font-size: 0.85rem;
+  cursor: pointer;
 }
 
-/* ========== SECTIONS ========== */
+/* ================= SECTIONS ================= */
 .section {
   max-width: 1100px;
   margin: auto;
   padding: 6rem 2rem;
 }
 
-.section-title {
-  font-family: "Playfair Display", serif;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
+.section h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
 }
 
-/* ========== ARTIFACTS ========== */
-.artifact-grid {
+/* ================= CARDS ================= */
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
-.artifact-card {
+.card {
   background: rgba(255,255,255,0.05);
   padding: 2rem;
-  border-radius: 16px;
+  border-radius: 18px;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease;
 }
 
-.artifact-card:hover {
+.card:hover {
   transform: translateY(-6px);
 }
 
-.artifact-card h4 {
-  margin-bottom: 1rem;
+.card h4 {
+  margin-bottom: 0.8rem;
 }
 
-.artifact-card a {
-  color: #8c9eff;
+/* ================= FOOTER ================= */
+.footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 0.8rem;
+  color: #9aa5ff;
+}
+
+.footer a {
+  color: #9aa5ff;
   text-decoration: none;
 }
 
-/* ========== RESUME MODAL ========== */
-.resume-modal {
+/* ================= MODAL ================= */
+.modal {
+  display: none;
   position: fixed;
   inset: 0;
-  background: rgba(5, 7, 13, 0.85);
-  display: none;
-  align-items: center;
+  background: rgba(0,0,0,0.85);
   justify-content: center;
+  align-items: center;
   z-index: 2000;
 }
 
-.resume-modal.active {
-  display: flex;
-}
-
-.resume-content {
-  background: rgba(20, 25, 45, 0.95);
+.modal-content {
+  background: #0b1020;
   padding: 2rem;
-  border-radius: 20px;
   max-width: 900px;
   max-height: 90vh;
   overflow-y: auto;
+  border-radius: 20px;
   position: relative;
 }
 
-.resume-content h3 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.resume-images {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-.resume-images img {
+.modal-content img {
   width: 100%;
+  margin-top: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.close-btn {
+.close {
   position: absolute;
-  top: 16px;
-  right: 20px;
+  top: 14px;
+  right: 18px;
   font-size: 2rem;
   background: none;
   border: none;
   color: #fff;
   cursor: pointer;
 }
-
-/* ========== FOOTER ========== */
-.site-footer {
-  text-align: center;
-  padding: 3rem 1rem;
-  font-size: 0.8rem;
-  color: #9aa0ff;
-}
-
-.site-footer a {
-  color: #9aa0ff;
-  text-decoration: none;
-}
-
