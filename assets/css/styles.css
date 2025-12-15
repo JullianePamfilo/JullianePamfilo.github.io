@@ -7,24 +7,26 @@
 
 /* ================= BASE ================= */
 body {
-  font-family: Inter, sans-serif;
-  background: radial-gradient(circle at top, #121830, #05070f);
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top, #151b35 0%, #05070f 65%);
   color: #eaeaf0;
-  line-height: 1.6;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
 /* ================= HEADER ================= */
-.header {
+.site-header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(5, 7, 15, 0.85);
-  backdrop-filter: blur(12px);
+  background: rgba(6, 8, 18, 0.75);
+  backdrop-filter: blur(14px);
   z-index: 1000;
 }
 
-.nav {
-  max-width: 1100px;
+.nav-container {
+  max-width: 1200px;
   margin: auto;
   padding: 1rem 2rem;
   display: flex;
@@ -33,17 +35,18 @@ body {
 }
 
 .logo {
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
 }
 
 .nav-links a,
 .nav-links button {
-  margin-left: 1.2rem;
+  margin-left: 1.5rem;
+  font-size: 0.85rem;
   background: none;
   border: none;
   color: #eaeaf0;
-  font-size: 0.9rem;
   cursor: pointer;
   text-decoration: none;
 }
@@ -52,55 +55,78 @@ body {
 .hero {
   min-height: 100vh;
   padding: 9rem 2rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 3.2rem;
-  font-weight: 600;
+.hero-content {
+  max-width: 800px;
+  z-index: 1;
 }
 
-.hero h2 {
-  margin-top: 0.5rem;
-  font-weight: 300;
+.hero-name {
+  letter-spacing: 3px;
+  font-size: 0.8rem;
   color: #9aa5ff;
 }
 
-.hero-text {
-  max-width: 720px;
-  margin: 2rem auto;
-  color: #cfd3ff;
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.4rem;
+  margin: 0.5rem 0 1rem;
 }
 
-.hero-buttons {
+.hero-subtext {
+  color: #cfd3ff;
+  margin: 1.5rem auto 2.5rem;
+}
+
+.hero-actions {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
+}
+
+/* Glow effect */
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background:
+    radial-gradient(circle, rgba(140,160,255,0.35), transparent 65%);
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
 }
 
 /* ================= BUTTONS ================= */
-.btn-primary {
+.btn {
   padding: 0.75rem 1.6rem;
-  background: linear-gradient(135deg, #9aa5ff, #6c79ff);
-  color: #05070f;
   border-radius: 999px;
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: transform 0.25s ease;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.btn-primary:hover {
+.btn.primary {
+  background: linear-gradient(135deg, #9aa5ff, #6c79ff);
+  color: #05070f;
+  box-shadow: 0 10px 25px rgba(140,160,255,0.35);
+  text-decoration: none;
+}
+
+.btn.primary:hover {
   transform: translateY(-2px);
 }
 
-.btn-outline {
-  padding: 0.75rem 1.6rem;
-  border: 1px solid #9aa5ff;
-  border-radius: 999px;
+.btn.ghost {
+  border: 1px solid rgba(255,255,255,0.35);
   background: none;
   color: #eaeaf0;
-  font-size: 0.85rem;
-  cursor: pointer;
 }
 
 /* ================= SECTIONS ================= */
@@ -110,82 +136,88 @@ body {
   padding: 6rem 2rem;
 }
 
-.section h3 {
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
-/* ================= CARDS ================= */
-.cards {
+/* ================= ARTIFACTS ================= */
+.artifact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
-.card {
+.artifact-card {
   background: rgba(255,255,255,0.05);
-  padding: 2rem;
-  border-radius: 18px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  padding: 2.2rem;
+  border-radius: 20px;
   transition: transform 0.3s ease;
 }
 
-.card:hover {
+.artifact-card:hover {
   transform: translateY(-6px);
 }
 
-.card h4 {
-  margin-bottom: 0.8rem;
+.artifact-card h3 {
+  margin-bottom: 1rem;
 }
 
 /* ================= FOOTER ================= */
-.footer {
+.site-footer {
   text-align: center;
   padding: 3rem 1rem;
   font-size: 0.8rem;
   color: #9aa5ff;
 }
 
-.footer a {
+.site-footer a {
   color: #9aa5ff;
   text-decoration: none;
 }
 
-/* ================= MODAL ================= */
-.modal {
-  display: none;
+/* ================= RESUME MODAL ================= */
+.resume-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
+  background: rgba(4, 6, 12, 0.9);
+  display: none;
   align-items: center;
+  justify-content: center;
   z-index: 2000;
 }
 
-.modal-content {
+.resume-modal.active {
+  display: flex;
+}
+
+.resume-content {
   background: #0b1020;
-  padding: 2rem;
+  padding: 2.5rem;
   max-width: 900px;
   max-height: 90vh;
   overflow-y: auto;
-  border-radius: 20px;
+  border-radius: 24px;
   position: relative;
 }
 
-.modal-content img {
+.resume-content img {
   width: 100%;
-  margin-top: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  margin-top: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
 }
 
-.close {
+.close-btn {
   position: absolute;
-  top: 14px;
-  right: 18px;
+  top: 18px;
+  right: 22px;
   font-size: 2rem;
   background: none;
   border: none;
   color: #fff;
   cursor: pointer;
 }
+
