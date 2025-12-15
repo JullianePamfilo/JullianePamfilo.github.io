@@ -773,3 +773,53 @@ kbd {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+
+/* =========================================================
+   HARD DISABLE UNUSED POPUPS (FINAL SAFETY NET)
+   ========================================================= */
+
+/* Disable keyboard shortcuts modal completely */
+#shortcutsModal,
+#shortcutsModal *,
+.shortcuts,
+.shortcut {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Disable resume modal completely */
+#resumeModal,
+#resumeModal *,
+.resume-controls,
+.resume-body,
+.resume-image {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Disable performance modal completely */
+#perfModal,
+#perfModal *,
+.perf-grid,
+.perf-item {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Disable toast notifications */
+.toast {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Safety: ensure hidden modals NEVER block clicks */
+.modal[hidden] {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Extra safety: backdrop should never trap clicks */
+.modal-backdrop {
+  pointer-events: none !important;
+}
+
