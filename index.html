@@ -3,224 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Julliane Pamfilo | CS 499 ePortfolio</title>
+  <title>Julliane Pamfilo — Software Engineer</title>
+  <meta name="description" content="CS 499 ePortfolio — Software Design, Algorithms, Databases" />
 
-  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Correct CSS path -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- ================= NAV ================= -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-mark">JP</div>
-        <div class="brand-text">Julliane Pamfilo</div>
-      </div>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">JP</div>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#artifacts">Artifacts</a>
+      <a href="#review">Code Review</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="nav-links">
-        <a class="nav-link" href="#overview">Overview</a>
-        <a class="nav-link" href="#artifacts">Artifacts</a>
-        <a class="nav-link" href="#review">Code Review</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<main>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero section">
-    <div class="container">
-      <p class="kicker">CS 499 ePortfolio</p>
+<section class="hero">
+  <h1>Engineering systems<br><span>with clarity and intent</span></h1>
+  <p>
+    I design and implement scalable, maintainable software systems with a strong
+    emphasis on algorithms, data integrity, and professional engineering practices.
+  </p>
 
-      <h1 class="hero-title">
-        Engineering <span class="accent">robust systems</span><br />
-        with clarity and intent
-      </h1>
+  <div class="hero-meta">
+    <span>4+ Years Development</span>
+    <span>Systems & Architecture</span>
+    <span>Engineering-Driven</span>
+  </div>
+</section>
 
-      <p class="hero-sub">
-        I design and implement scalable, maintainable software systems with a
-        strong emphasis on algorithms, data integrity, and professional
-        engineering practices.
+<section id="overview" class="section reveal">
+  <h2>Professional Overview</h2>
+  <p>
+    Throughout the Computer Science program, I evolved from focusing solely on correctness
+    to engineering software that is modular, secure, and built for long-term maintainability.
+  </p>
+  <p>
+    This portfolio demonstrates that growth through enhanced artifacts aligned with
+    software design, algorithms and data structures, and databases.
+  </p>
+</section>
+
+<section id="artifacts" class="section reveal">
+  <h2>Enhanced Artifacts</h2>
+
+  <div class="card-grid">
+
+    <a class="card" href="artifacts/artifact1_software_design/" target="_blank">
+      <h3>Software Design & Engineering</h3>
+      <p>
+        Dashboard application enhanced for modularity, separation of concerns,
+        and clean architectural boundaries.
       </p>
+      <span>View on GitHub →</span>
+    </a>
 
-      <div class="hero-metrics">
-        <div class="metric">
-          <div class="metric-label">Experience</div>
-          <div class="metric-value">4+ Years Development</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Focus</div>
-          <div class="metric-value">Systems & Architecture</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">Mindset</div>
-          <div class="metric-value">Engineering-Driven</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= OVERVIEW ================= -->
-  <section id="overview" class="section section-muted">
-    <div class="container">
-      <h2 class="section-title">Professional Overview</h2>
-
-      <p class="muted">
-        Throughout the Computer Science program, I evolved from focusing solely
-        on correctness to engineering software that is modular, secure, and
-        built for long-term maintainability.
+    <a class="card" href="artifacts/artifact2_algorithms/" target="_blank">
+      <h3>Algorithms & Data Structures</h3>
+      <p>
+        Course planning system optimized using appropriate data structures
+        to improve runtime performance and reliability.
       </p>
+      <span>View on GitHub →</span>
+    </a>
 
-      <p class="muted">
-        This portfolio demonstrates that growth through enhanced artifacts
-        aligned with software design, algorithms and data structures, and
-        databases. Each artifact reflects deliberate design decisions and
-        professional standards.
+    <a class="card" href="artifacts/artifact3_databases/" target="_blank">
+      <h3>Databases</h3>
+      <p>
+        CRUD module strengthened with improved validation, error handling,
+        and data integrity safeguards.
       </p>
-    </div>
-  </section>
+      <span>View on GitHub →</span>
+    </a>
 
-  <!-- ================= ARTIFACTS ================= -->
-  <section id="artifacts" class="section">
-    <div class="container">
-      <h2 class="section-title">Enhanced Artifacts</h2>
+  </div>
+</section>
 
-      <div class="artifact-grid">
+<section id="review" class="section reveal">
+  <h2>Informal Code Review</h2>
+  <p>
+    A recorded walkthrough analyzing design decisions, tradeoffs, and enhancements
+    made across all artifacts.
+  </p>
+  <a class="link" href="https://youtu.be/9Xwo-AlOMqo" target="_blank">
+    Watch Code Review on YouTube →
+  </a>
+</section>
 
-        <!-- Artifact 1 -->
-        <article class="artifact-tile">
-          <h3 class="artifact-title">Software Design & Engineering</h3>
-          <p class="artifact-desc">
-            Dashboard application enhanced for modularity, separation of
-            concerns, and clean architectural boundaries.
-          </p>
-          <a
-            class="artifact-cta"
-            href="artifacts/artifact1_software_design/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Artifact →
-          </a>
-        </article>
+<section id="contact" class="section reveal">
+  <h2>Contact</h2>
+  <p>
+    Open to software engineering roles, technical collaboration,
+    and system-focused development opportunities.
+  </p>
 
-        <!-- Artifact 2 -->
-        <article class="artifact-tile">
-          <h3 class="artifact-title">Algorithms & Data Structures</h3>
-          <p class="artifact-desc">
-            Course planning system optimized using appropriate data structures
-            to improve runtime performance and reliability.
-          </p>
-          <a
-            class="artifact-cta"
-            href="artifacts/artifact2_algorithms/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Artifact →
-          </a>
-        </article>
+  <div class="contact-links">
+    <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231" target="_blank">LinkedIn</a>
+    <a href="mailto:pamfilojulliane@yahoo.com">Email</a>
+    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+  </div>
+</section>
 
-        <!-- Artifact 3 -->
-        <article class="artifact-tile">
-          <h3 class="artifact-title">Databases</h3>
-          <p class="artifact-desc">
-            CRUD module strengthened with improved validation, error handling,
-            and data integrity safeguards.
-          </p>
-          <a
-            class="artifact-cta"
-            href="artifacts/artifact3_databases/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Artifact →
-          </a>
-        </article>
+</main>
 
-      </div>
-    </div>
-  </section>
+<footer>
+  © 2025 Julliane Pamfilo · CS 499 · Southern New Hampshire University
+</footer>
 
-  <!-- ================= CODE REVIEW ================= -->
-  <section id="review" class="section section-muted">
-    <div class="container">
-      <h2 class="section-title">Informal Code Review</h2>
-
-      <p class="muted">
-        A recorded walkthrough analyzing design decisions, tradeoffs, and
-        enhancements made across all artifacts.
-      </p>
-
-      <a
-        class="btn"
-        href="https://youtu.be/9Xwo-AlOMqo"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Watch Code Review on YouTube
-      </a>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section id="contact" class="section">
-    <div class="container about-grid">
-      <div>
-        <h2 class="section-title">Contact</h2>
-        <p class="muted">
-          Open to software engineering roles, technical collaboration, and
-          system-focused development opportunities.
-        </p>
-      </div>
-
-      <div class="contact-card">
-        <a
-          class="contact-link"
-          href="https://www.linkedin.com/in/julliane-pamfilo-750266231"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn →
-        </a>
-
-        <a
-          class="contact-link"
-          href="mailto:pamfilojulliane@yahoo.com"
-        >
-          Email →
-        </a>
-
-        <a
-          class="contact-link"
-          href="https://www.youtube.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          YouTube →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© 2025 Julliane Pamfilo</p>
-      <p>CS 499 • Southern New Hampshire University</p>
-    </div>
-  </footer>
-
-  <!-- Correct JS path -->
-  <script src="assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
