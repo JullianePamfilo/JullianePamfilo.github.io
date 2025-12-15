@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
   <!--
-    I built this portfolio as part of my CS 499 capstone to showcase
-    my growth as a computer science professional. Every section here
-    is intentional: clean structure, accessible markup, and clarity
-    for both instructors and employers.
+    I built this portfolio to represent who I am as a software engineer.
+    It’s designed to communicate clarity, intention, and real-world readiness
+    to both instructors and employers.
   -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Julliane Pamfilo | Computer Science Portfolio</title>
+  <title>Julliane Pamfilo | Software Engineer</title>
 
-  <!-- SEO + Accessibility -->
-  <meta name="description" content="Computer Science ePortfolio showcasing software engineering, algorithms, data structures, databases, and secure coding practices." />
+  <!-- SEO & Metadata -->
+  <meta name="description" content="Software Engineer portfolio showcasing full-stack development, algorithms, databases, and secure software design." />
   <meta name="author" content="Julliane Pamfilo" />
 
   <!-- Styles -->
@@ -21,18 +20,21 @@
 </head>
 
 <body>
-  <!-- Accessibility skip link -->
+  <!-- Accessibility -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- ================= HEADER ================= -->
   <header class="site-header">
     <div class="header-inner">
-      <h1 class="logo">JP<span>.</span></h1>
+      <div class="brand">
+        <h1 class="logo">Julliane<span>.</span></h1>
+        <span class="tagline">Software Engineer</span>
+      </div>
 
       <nav class="nav">
         <a href="#about">About</a>
-        <a href="#artifacts">Artifacts</a>
-        <a href="#skills">Skills</a>
+        <a href="#artifacts">Work</a>
+        <a href="#skills">Expertise</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -40,22 +42,26 @@
 
   <!-- ================= MAIN ================= -->
   <main id="main">
+
     <!-- ================= HERO ================= -->
     <section class="hero">
       <div class="hero-content">
         <h2>
-          I design and build<br />
-          <span>thoughtful, secure software</span>
+          I build software that is<br />
+          <span>intentional, scalable, and secure</span>
         </h2>
 
         <p class="hero-subtext">
-          I’m a Computer Science student and full-stack engineer focused on
-          clean architecture, algorithmic efficiency, and real-world problem solving.
+          I’m a Software Engineer with 5+ years of hands-on experience in full-stack
+          development and AI-driven applications, specializing in modern web systems,
+          clean architecture, and real-world problem solving.
         </p>
 
         <div class="hero-actions">
           <a href="#artifacts" class="btn primary">View My Work</a>
-          <a href="assets/docs/Resume.pdf" class="btn ghost">Download Resume</a>
+          <a href="assets/docs/Julliane-Pamfilo-Software-Engineer.pdf" class="btn ghost">
+            Download Resume
+          </a>
         </div>
       </div>
 
@@ -67,57 +73,54 @@
       <h3 class="section-title">About Me</h3>
 
       <p>
-        I’m Julliane Pamfilo, a Computer Science student completing my capstone
-        in CS 499. Throughout my program, I’ve developed a strong foundation in
-        software engineering, algorithms and data structures, databases, and secure
-        coding practices.
+        I’m Julliane Pamfilo, a Software Engineer and Founding Engineer at DADO, a luxury
+        gifting technology startup. I focus on building high-quality digital products
+        that balance performance, maintainability, and user experience.
       </p>
 
       <p>
-        I approach development with an engineering mindset: I think about structure,
-        maintainability, trade-offs, and the people who will use or maintain the system
-        long after it’s built.
+        My background spans full-stack development, algorithms and data structures,
+        database design, and secure coding practices. I approach engineering with
+        intention—thinking beyond “does it work?” to “will this scale, and can others
+        build on it confidently?”
       </p>
     </section>
 
     <!-- ================= ARTIFACTS ================= -->
     <section id="artifacts" class="section dark">
-      <h3 class="section-title">Capstone Artifacts</h3>
+      <h3 class="section-title">Selected Work</h3>
 
       <div class="cards">
-        <!-- Artifact 1 -->
         <article class="card">
           <h4>Software Design & Engineering</h4>
           <p>
-            A refactored, modular dashboard application demonstrating clean architecture,
-            separation of concerns, and professional design practices.
+            A modular dashboard application demonstrating clean architecture,
+            separation of concerns, and maintainable design patterns.
           </p>
           <a href="artifacts/artifact1_software_design/README.md" class="card-link">
-            View Artifact →
+            Explore Project →
           </a>
         </article>
 
-        <!-- Artifact 2 -->
         <article class="card">
           <h4>Algorithms & Data Structures</h4>
           <p>
-            A course advising system optimized through improved data structure selection,
-            algorithm efficiency, and runtime analysis.
+            A course advising system optimized through improved data structure
+            selection, algorithm efficiency, and runtime analysis.
           </p>
           <a href="artifacts/artifact2_algorithms/README.md" class="card-link">
-            View Artifact →
+            Explore Project →
           </a>
         </article>
 
-        <!-- Artifact 3 -->
         <article class="card">
           <h4>Databases</h4>
           <p>
-            A database-backed application showcasing CRUD operations, data validation,
-            and performance-aware query design.
+            A database-driven application showcasing robust CRUD operations,
+            validation, and performance-aware query design.
           </p>
           <a href="artifacts/artifact3_databases/README.md" class="card-link">
-            View Artifact →
+            Explore Project →
           </a>
         </article>
       </div>
@@ -125,15 +128,15 @@
 
     <!-- ================= SKILLS ================= -->
     <section id="skills" class="section">
-      <h3 class="section-title">Technical Focus</h3>
+      <h3 class="section-title">Technical Expertise</h3>
 
       <ul class="skills-grid">
-        <li>Java • Python • C++</li>
+        <li>Java • Python • JavaScript • TypeScript</li>
+        <li>React • Node.js • MERN Stack</li>
         <li>Data Structures & Algorithms</li>
-        <li>Object-Oriented Design</li>
-        <li>Database Design (SQL & NoSQL)</li>
-        <li>Secure Coding Practices</li>
-        <li>Testing & Debugging</li>
+        <li>SQL & NoSQL Databases</li>
+        <li>AI Integrations (LangChain, RAG)</li>
+        <li>Secure Coding & Validation</li>
       </ul>
     </section>
 
@@ -142,14 +145,19 @@
       <h3 class="section-title">Let’s Connect</h3>
 
       <p>
-        I’m actively preparing for roles in software engineering and full-stack development.
-        I’m always open to conversations about technology, design, and problem-solving.
+        I’m actively open to software engineering opportunities and collaborative
+        projects. Whether you’re building a product or exploring an idea, I’m
+        always happy to connect.
       </p>
 
       <div class="contact-links">
-        <a href="https://github.com/JullianePamfilo" target="_blank">GitHub</a>
-        <a href="mailto:your-email@example.com">Email</a>
-        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        <a href="mailto:pamfilojulliane@yahoo.com">pamfilojulliane@yahoo.com</a>
+        <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231" target="_blank">
+          LinkedIn
+        </a>
+        <a href="https://github.com/JullianePamfilo" target="_blank">
+          GitHub
+        </a>
       </div>
     </section>
   </main>
@@ -157,15 +165,13 @@
   <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <p>
-      © <span id="year"></span> Julliane Pamfilo • Built with intention and care
+      © <span id="year"></span> Julliane Pamfilo • Designed & built with intention
     </p>
   </footer>
 
   <script>
-    // I use this tiny script to keep the copyright year current
+    // I keep this small script to automatically update the year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
-</html>
-
 </html>
