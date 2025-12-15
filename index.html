@@ -6,158 +6,153 @@
 
   <title>Julliane Pamfilo | Software Engineer</title>
 
-  <!-- Meta -->
   <meta name="description"
-        content="Software Engineer specializing in full-stack development, applied AI, and scalable system design." />
+        content="Software Engineer specializing in full-stack development, algorithms, databases, and secure system design." />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
 
-  <!-- ================= NAV ================= -->
-  <header class="site-header">
-    <div class="nav-container">
-      <span class="logo">JP</span>
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="nav">
+    <div class="logo">JP</div>
 
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#artifacts">Artifacts</a>
-        <button class="btn ghost" id="openResume">View Resume</button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <h1>Julliane Pamfilo</h1>
-    <h2>Software Engineer</h2>
-
-    <p class="hero-subtext">
-      I design and build scalable full-stack systems, applied AI solutions,
-      and production-ready web platforms with a focus on performance,
-      maintainability, and real-world impact.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#artifacts" class="btn primary">Explore My Work</a>
-      <button class="btn ghost" id="openResumeHero">View Resume</button>
-    </div>
-
-    <div class="hero-glow"></div>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section id="about" class="section">
-    <h3 class="section-title">About Me</h3>
-
-    <p>
-      I’m Julliane Pamfilo, a Software Engineer with hands-on experience in
-      full-stack development, algorithms and data structures, database design,
-      and secure coding practices.
-    </p>
-
-    <p>
-      I currently serve as a Founding Engineer at DADO, where I lead frontend
-      architecture and full-stack development for a luxury gifting technology
-      platform. My approach to engineering centers on intentional system design,
-      thoughtful UX, and building software that scales beyond initial use cases.
-    </p>
-  </section>
-
-  <!-- ================= ARTIFACTS ================= -->
-  <section id="artifacts" class="section">
-    <h3 class="section-title">Capstone Artifacts</h3>
-
-    <div class="artifact-grid">
-      <div class="artifact-card">
-        <h4>Software Design & Engineering</h4>
-        <p>
-          Demonstrates my ability to design modular, maintainable systems using
-          client-server architecture and clean separation of concerns.
-        </p>
-        <a href="artifacts/artifact1_software_design/README.md">View Artifact</a>
-      </div>
-
-      <div class="artifact-card">
-        <h4>Algorithms & Data Structures</h4>
-        <p>
-          Highlights my work with efficient data structures, runtime analysis,
-          and algorithmic problem solving in C++ and Java.
-        </p>
-        <a href="artifacts/artifact2_algorithms/README.md">View Artifact</a>
-      </div>
-
-      <div class="artifact-card">
-        <h4>Databases</h4>
-        <p>
-          Showcases database design, CRUD operations, and real-time data
-          interaction using MongoDB and Python.
-        </p>
-        <a href="artifacts/artifact3_databases/README.md">View Artifact</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= RESUME MODAL ================= -->
-  <div class="resume-modal" id="resumeModal">
-    <div class="resume-content">
-      <button class="close-btn" id="closeResume">&times;</button>
-
-      <h3>Resume</h3>
-
-      <div class="resume-images">
-        <img src="assets/img/resume/Julliane-Pamfilo-Resume-1.png"
-             alt="Julliane Pamfilo Resume Page 1" />
-
-        <img src="assets/img/resume/Julliane-Pamfilo-Resume-2.png"
-             alt="Julliane Pamfilo Resume Page 2" />
-      </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#artifacts">Artifacts</a>
+      <button id="openResumeNav" class="btn-outline">View Resume</button>
     </div>
   </div>
+</header>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <p>
-      © <span id="year"></span> Julliane Pamfilo ·
-      <a href="mailto:pamfilojulliane@yahoo.com">pamfilojulliane@yahoo.com</a> ·
-      <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231"
-         target="_blank" rel="noopener">LinkedIn</a>
-    </p>
-  </footer>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <h1>Julliane Pamfilo</h1>
+  <h2>Software Engineer</h2>
 
-  <!-- ================= SCRIPT ================= -->
-  <script>
-    // I keep this script intentionally simple so it stays reliable and readable.
+  <p class="hero-text">
+    I design and build scalable full-stack systems, applied AI solutions,
+    and production-ready applications with a strong focus on performance,
+    maintainability, and real-world impact.
+  </p>
 
-    const resumeModal = document.getElementById("resumeModal");
-    const openButtons = [
-      document.getElementById("openResume"),
-      document.getElementById("openResumeHero")
-    ];
-    const closeButton = document.getElementById("closeResume");
+  <div class="hero-buttons">
+    <a href="#artifacts" class="btn-primary">Explore My Work</a>
+    <button id="openResumeHero" class="btn-outline">View Resume</button>
+  </div>
+</section>
 
-    openButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        resumeModal.classList.add("active");
-        document.body.style.overflow = "hidden";
-      });
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
+  <h3>About Me</h3>
+
+  <p>
+    I’m Julliane Pamfilo, a Software Engineer with hands-on experience in
+    full-stack development, algorithms and data structures, database design,
+    and secure coding practices.
+  </p>
+
+  <p>
+    I currently serve as a Founding Engineer at DADO, where I lead frontend
+    architecture and full-stack development for a luxury gifting technology
+    platform. I approach engineering with intention — designing systems
+    that scale, communicate clearly, and endure.
+  </p>
+</section>
+
+<!-- ================= ARTIFACTS ================= -->
+<section id="artifacts" class="section">
+  <h3>Capstone Artifacts</h3>
+
+  <div class="cards">
+    <div class="card">
+      <h4>Software Design & Engineering</h4>
+      <p>
+        Demonstrates modular design, separation of concerns,
+        and client–server architecture.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Algorithms & Data Structures</h4>
+      <p>
+        Highlights runtime analysis, efficient data structures,
+        and structured problem solving.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Databases</h4>
+      <p>
+        Showcases CRUD operations, schema design,
+        and data-driven application workflows.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>
+    © <span id="year"></span> Julliane Pamfilo ·
+    <a href="mailto:pamfilojulliane@yahoo.com">pamfilojulliane@yahoo.com</a> ·
+    <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231"
+       target="_blank" rel="noopener">LinkedIn</a>
+  </p>
+</footer>
+
+<!-- ================= RESUME MODAL ================= -->
+<div id="resumeModal" class="modal">
+  <div class="modal-content">
+    <button id="closeResume" class="close">&times;</button>
+
+    <h3>Resume</h3>
+
+    <!-- I load the resume as images to avoid GitHub Pages PDF issues -->
+    <img src="assets/img/resume/Julliane-Pamfilo-Resume-1.png"
+         alt="Julliane Pamfilo Resume Page 1">
+
+    <img src="assets/img/resume/Julliane-Pamfilo-Resume-2.png"
+         alt="Julliane Pamfilo Resume Page 2">
+  </div>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  // I keep this JavaScript intentionally simple and explicit
+  // so it works reliably on GitHub Pages without dependencies.
+
+  const resumeModal = document.getElementById("resumeModal");
+  const openButtons = [
+    document.getElementById("openResumeNav"),
+    document.getElementById("openResumeHero")
+  ];
+  const closeButton = document.getElementById("closeResume");
+
+  openButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      resumeModal.style.display = "flex";
+      document.body.style.overflow = "hidden";
     });
+  });
 
-    closeButton.addEventListener("click", () => {
-      resumeModal.classList.remove("active");
-      document.body.style.overflow = "auto";
-    });
+  closeButton.addEventListener("click", () => {
+    resumeModal.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
 
-    // I dynamically update the year so I never have to touch the footer again.
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
+  // I update the footer year dynamically so it never goes stale.
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
 
 </body>
 </html>
+
