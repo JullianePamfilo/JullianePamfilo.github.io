@@ -1,39 +1,23 @@
-/* ===============================
-   DESIGN SYSTEM VARIABLES
-================================ */
+/* =========================
+   CSS RESET + VARIABLES
+   ========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 :root {
-  --bg-primary: #0b1020;
-  --bg-secondary: #111833;
-  --text-primary: #e6e9ff;
-  --text-muted: #a3aed0;
-  --accent: #7c9cff;
-  --accent-glow: #a78bfa;
-
-  --card-bg: rgba(255, 255, 255, 0.06);
-  --border-soft: rgba(255, 255, 255, 0.12);
-}
-
-[data-theme="light"] {
-  --bg-primary: #f6f8ff;
-  --bg-secondary: #ffffff;
-  --text-primary: #0f172a;
-  --text-muted: #475569;
-  --accent: #4f46e5;
-  --accent-glow: #6366f1;
-
-  --card-bg: rgba(0, 0, 0, 0.04);
-  --border-soft: rgba(0, 0, 0, 0.12);
-}
-
-/* ===============================
-   GLOBAL RESET
-================================ */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  --bg: #0b1020;
+  --surface: #121933;
+  --card: #1a2142;
+  --primary: #6ea8ff;
+  --accent: #9b8cff;
+  --text: #e6e9f5;
+  --muted: #9aa3c7;
+  --border: rgba(255,255,255,0.08);
+  --radius: 14px;
+  --max-width: 1100px;
 }
 
 html {
@@ -41,28 +25,27 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: "Inter", system-ui, sans-serif;
-  background: linear-gradient(160deg, var(--bg-primary), var(--bg-secondary));
-  color: var(--text-primary);
+  background: radial-gradient(circle at top, #121933, #0b1020);
+  color: var(--text);
   line-height: 1.6;
-  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* ===============================
+/* =========================
    NAVIGATION
-================================ */
-
-.nav {
+   ========================= */
+header {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(14px);
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid var(--border-soft);
+  backdrop-filter: blur(12px);
+  background: rgba(11,16,32,0.75);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-container {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: auto;
   padding: 1rem 2rem;
   display: flex;
@@ -72,134 +55,98 @@ body {
 
 .logo {
   font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
 
 .nav-links a {
-  color: var(--text-muted);
-  text-decoration: none;
   margin-left: 1.5rem;
-  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
 }
 
-.nav-links a.active,
 .nav-links a:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
-/* ===============================
+/* =========================
    HERO
-================================ */
-
+   ========================= */
 .hero {
   min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   text-align: center;
   padding: 4rem 2rem;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-size: clamp(2.8rem, 5vw, 3.5rem);
   margin-bottom: 0.5rem;
 }
 
 .hero h2 {
-  font-size: 1.4rem;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
+  color: var(--primary);
+  font-weight: 500;
 }
 
-.hero-subtext {
-  max-width: 620px;
-  margin: auto;
-  color: var(--text-muted);
+.hero p {
+  max-width: 700px;
+  margin: 1.5rem auto;
+  color: var(--muted);
 }
 
-/* ===============================
+.hero .btn {
+  margin-top: 1.5rem;
+}
+
+/* =========================
    SECTIONS
-================================ */
-
+   ========================= */
 .section {
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: auto;
   padding: 5rem 2rem;
 }
 
-/* IMPORTANT: content is visible by default */
-.reveal {
-  opacity: 1;
-  transform: none;
+.section h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Enhanced only if JS runs */
-.reveal.active {
-  animation: fadeUp 0.8s ease forwards;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===============================
-   ARTIFACT CARDS
-================================ */
-
+/* =========================
+   CARDS
+   ========================= */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .card {
-  padding: 1.8rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border-soft);
-  border-radius: 14px;
+  background: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, border-color 0.3s ease;
   text-decoration: none;
-  color: inherit;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: var(--text);
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  border-color: var(--primary);
 }
 
 .card h4 {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 
-/* ===============================
+/* =========================
    FOOTER
-================================ */
-
-.footer {
+   ========================= */
+footer {
+  border-top: 1px solid var(--border);
   padding: 2rem;
   text-align: center;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-soft);
-}
-
-/* ===============================
-   THEME TOGGLE
-================================ */
-
-.theme-toggle {
-  cursor: pointer;
-  border: 1px solid var(--border-soft);
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  background: var(--card-bg);
-  color: var(--text-primary);
-  font-size: 0.85rem;
+  color: var(--muted);
 }
