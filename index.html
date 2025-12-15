@@ -1,122 +1,542 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Julliane Pamfilo — Software Engineer</title>
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <!--
+      I keep this as a pure GitHub Pages build: no bundlers, no frameworks.
+      That means everything must be referenced with correct relative paths.
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
 
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+    <title>Julliane Pamfilo — CS 499 ePortfolio</title>
+    <meta
+      name="description"
+      content="CS 499 ePortfolio by Julliane Pamfilo featuring enhanced artifacts in Software Design, Algorithms & Data Structures, and Databases."
+    />
 
-<body>
-  <header class="nav">
-    <div class="nav-inner">
-      <span class="logo">JP</span>
-      <nav>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#artifacts">Artifacts</a>
-        <button id="themeToggle" aria-label="Toggle theme">☾</button>
-      </nav>
+    <!-- Social preview (optional, safe defaults) -->
+    <meta property="og:title" content="Julliane Pamfilo — CS 499 ePortfolio" />
+    <meta property="og:description" content="Enhanced CS artifacts + self-assessment + code review." />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- IMPORTANT: cache-bust so GitHub Pages updates show immediately -->
+    <link rel="stylesheet" href="./styles.css?v=3" />
+  </head>
+
+  <body>
+    <!-- I add a skip link so keyboard users can jump past the nav quickly. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Background layers (visual polish without images) -->
+    <div class="bg">
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="bg-glow" aria-hidden="true"></div>
+      <div class="bg-noise" aria-hidden="true"></div>
     </div>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <h1>
-        I design and build <span>thoughtful software</span><br />
-        with performance, structure, and purpose.
-      </h1>
+    <header class="nav" role="banner">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="Go to top">
+          <span class="brand-mark">JP</span>
+          <span class="brand-text">Julliane Pamfilo</span>
+        </a>
 
-      <p class="hero-sub">
-        I’m Julliane Pamfilo — a software engineer focused on scalable systems,
-        clean architecture, and real-world impact.
-      </p>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="nav-link" href="#work" data-nav="work">Work</a>
+          <a class="nav-link" href="#self" data-nav="self">Self-Assessment</a>
+          <a class="nav-link" href="#review" data-nav="review">Code Review</a>
+          <a class="nav-link" href="#artifacts" data-nav="artifacts">Artifacts</a>
+          <a class="nav-link" href="#about" data-nav="about">About</a>
+        </nav>
 
-      <div class="hero-actions">
-        <a href="#artifacts" class="primary">View My Work</a>
-        <a href="#about" class="secondary">About Me</a>
+        <div class="nav-actions">
+          <button class="btn btn-ghost" id="shortcutsBtn" type="button" aria-haspopup="dialog">
+            Shortcuts
+          </button>
+          <button class="btn btn-ghost" id="perfBtn" type="button" aria-haspopup="dialog">
+            Performance
+          </button>
+          <button class="btn btn-primary" id="resumeBtn" type="button" aria-haspopup="dialog">
+            View Resume
+          </button>
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">
+            <span class="icon" aria-hidden="true">◐</span>
+          </button>
+        </div>
+
+        <button class="icon-btn nav-mobile-btn" id="mobileMenuBtn" type="button" aria-label="Open menu">
+          <span aria-hidden="true">☰</span>
+        </button>
       </div>
-    </section>
 
-    <!-- WORK -->
-    <section id="work" class="section">
-      <h2>Selected Work</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Software Design & Engineering</h3>
-          <p>
-            I refactored an existing dashboard to improve modularity,
-            separation of concerns, and long-term maintainability.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Algorithms & Data Structures</h3>
-          <p>
-            I optimized lookup and sorting logic by replacing inefficient
-            structures with hash maps and ordered collections.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Databases</h3>
-          <p>
-            I strengthened validation, error handling, and data integrity
-            while maintaining a clean separation between logic layers.
-          </p>
+      <!-- Mobile menu drawer -->
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <div class="container mobile-menu-inner">
+          <a href="#work" class="mobile-link">Work</a>
+          <a href="#self" class="mobile-link">Self-Assessment</a>
+          <a href="#review" class="mobile-link">Code Review</a>
+          <a href="#artifacts" class="mobile-link">Artifacts</a>
+          <a href="#about" class="mobile-link">About</a>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- ABOUT -->
-    <section id="about" class="section muted">
-      <h2>About Me</h2>
+    <main id="main" class="main" role="main">
+      <!-- HERO -->
+      <section id="top" class="hero">
+        <div class="container hero-inner">
+          <p class="kicker">CS 499 • Computer Science ePortfolio</p>
 
-      <p class="long-text">
-        Throughout my Computer Science program, I’ve grown from focusing purely
-        on making code work to thinking deeply about how systems scale,
-        communicate, and evolve. I approach software with an engineering
-        mindset—prioritizing clarity, performance, and maintainability.
-      </p>
+          <h1 class="hero-title">
+            I design and build <span class="accent">high-trust software</span><br />
+            with performance, structure, and purpose.
+          </h1>
 
-      <p class="long-text">
-        I’m particularly interested in full-stack development and applied AI
-        systems, where thoughtful design decisions directly affect user
-        experience and system reliability.
-      </p>
-    </section>
+          <p class="hero-sub">
+            I’m <strong>Julliane Pamfilo</strong> — a software engineer focused on scalable systems,
+            clean architecture, and real-world impact. This portfolio highlights my strongest work across
+            <strong>software design</strong>, <strong>algorithms</strong>, and <strong>databases</strong>.
+          </p>
 
-    <!-- ARTIFACTS -->
-    <section id="artifacts" class="section">
-      <h2>CS 499 Capstone Artifacts</h2>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#artifacts">Explore Artifacts</a>
+            <a class="btn btn-ghost" href="#self">Read Self-Assessment</a>
+            <button class="btn btn-ghost" type="button" id="openShortcutsInline">
+              Keyboard Hints
+            </button>
+          </div>
 
-      <ul class="artifact-list">
-        <li>
-          <strong>Software Design & Engineering:</strong>
-          Enhanced a data dashboard with improved architecture and usability.
-        </li>
-        <li>
-          <strong>Algorithms & Data Structures:</strong>
-          Optimized performance through appropriate data structure selection.
-        </li>
-        <li>
-          <strong>Databases:</strong>
-          Improved validation, CRUD reliability, and data safety.
-        </li>
-      </ul>
-    </section>
-  </main>
+          <div class="hero-metrics" role="list">
+            <div class="metric" role="listitem">
+              <div class="metric-label">Focus</div>
+              <div class="metric-value">Full-Stack • Systems • AI</div>
+            </div>
+            <div class="metric" role="listitem">
+              <div class="metric-label">Strengths</div>
+              <div class="metric-value">Architecture • Efficiency • Reliability</div>
+            </div>
+            <div class="metric" role="listitem">
+              <div class="metric-label">Capstone</div>
+              <div class="metric-value">3 Enhanced Artifacts</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    <p>© 2025 Julliane Pamfilo</p>
-  </footer>
+      <!-- WORK -->
+      <section id="work" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Selected Work</h2>
+            <p class="section-sub">
+              I’m showing the three capstone artifacts here as “products”: clean descriptions, clear impact, and fast access.
+            </p>
+          </div>
 
-  <script src="script.js"></script>
-</body>
+          <div class="cards">
+            <article class="card">
+              <div class="card-top">
+                <h3>Software Design & Engineering</h3>
+                <span class="pill">Architecture</span>
+              </div>
+              <p>
+                I improved maintainability by tightening separation of concerns, clarifying responsibilities,
+                and making the system easier to extend without breaking behavior.
+              </p>
+              <div class="card-actions">
+                <button class="btn btn-primary" data-artifact="swe" type="button">
+                  Preview
+                </button>
+                <a class="btn btn-ghost" href="./artifacts/" target="_blank" rel="noreferrer">
+                  Open Folder
+                </a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <h3>Algorithms & Data Structures</h3>
+                <span class="pill">Performance</span>
+              </div>
+              <p>
+                I upgraded the course planner by selecting data structures that match the workload,
+                improving lookup performance and overall runtime behavior.
+              </p>
+              <div class="card-actions">
+                <button class="btn btn-primary" data-artifact="ads" type="button">
+                  Preview
+                </button>
+                <a class="btn btn-ghost" href="./artifacts/" target="_blank" rel="noreferrer">
+                  Open Folder
+                </a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <h3>Databases</h3>
+                <span class="pill">Integrity</span>
+              </div>
+              <p>
+                I strengthened validation and error handling so the system behaves predictably when interacting with stored data.
+                I keep the data layer disciplined and consistent.
+              </p>
+              <div class="card-actions">
+                <button class="btn btn-primary" data-artifact="db" type="button">
+                  Preview
+                </button>
+                <a class="btn btn-ghost" href="./artifacts/" target="_blank" rel="noreferrer">
+                  Open Folder
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SELF-ASSESSMENT -->
+      <section id="self" class="section section-muted">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Professional Self-Assessment</h2>
+            <p class="section-sub">This is the “why me” section. I keep it readable, confident, and grounded.</p>
+          </div>
+
+          <div class="prose">
+            <p>
+              Throughout my Computer Science program, I developed from a student learning foundational programming concepts
+              into a confident and career-ready software engineer capable of designing, implementing, and improving real-world systems.
+            </p>
+            <p>
+              When I began the program, my focus was primarily on making programs function correctly. Over time, my perspective shifted
+              toward building software that is scalable, efficient, maintainable, and secure. This transition is evident across my enhanced artifacts,
+              where I revisited earlier work to apply stronger architectural decisions, optimized data structures, and improved validation and error handling.
+            </p>
+            <p>
+              Together, these artifacts demonstrate that I can design and evaluate computing solutions, apply appropriate algorithms and data structures,
+              and manage data responsibly. Beyond the code, I value documentation and clarity because strong engineering depends on communication as much as implementation.
+            </p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-title">Quick navigation</div>
+            <div class="callout-links">
+              <a href="#review">Go to Code Review</a>
+              <a href="#artifacts">Go to Artifacts</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CODE REVIEW -->
+      <section id="review" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Informal Code Review</h2>
+            <p class="section-sub">I present the reasoning behind changes and demonstrate professional review habits.</p>
+          </div>
+
+          <div class="review-grid">
+            <div class="review-card">
+              <h3>Video</h3>
+              <p class="muted">
+                Add your YouTube link below. If you don’t have it, I leave a placeholder so the page still looks finished.
+              </p>
+              <div class="embed">
+                <!-- Replace with your real video ID -->
+                <iframe
+                  title="CS 499 Code Review Video"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <h3>What I cover</h3>
+              <ul class="checklist">
+                <li>What the original artifact did</li>
+                <li>Where it was weak or risky</li>
+                <li>What I improved and why</li>
+                <li>How I validated correctness</li>
+                <li>How the result aligns to outcomes</li>
+              </ul>
+
+              <button class="btn btn-ghost" type="button" id="copyRepoBtn">
+                Copy Repo Link
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARTIFACTS -->
+      <section id="artifacts" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Enhanced Artifacts</h2>
+            <p class="section-sub">
+              Click an artifact to preview the README inside a modal (no page reload). I designed this to feel like a product showcase.
+            </p>
+          </div>
+
+          <div class="artifact-grid">
+            <button class="artifact-tile" type="button" data-artifact="swe">
+              <div class="artifact-title">Software Design & Engineering</div>
+              <div class="artifact-desc">Modular dashboard improvements, clearer responsibilities, maintainability focus.</div>
+              <div class="artifact-meta">
+                <span class="tag">Design</span>
+                <span class="tag">Architecture</span>
+                <span class="tag">Usability</span>
+              </div>
+              <div class="artifact-cta">Preview README →</div>
+            </button>
+
+            <button class="artifact-tile" type="button" data-artifact="ads">
+              <div class="artifact-title">Algorithms & Data Structures</div>
+              <div class="artifact-desc">Course planner optimized with better data structure selection and runtime reasoning.</div>
+              <div class="artifact-meta">
+                <span class="tag">Hash map</span>
+                <span class="tag">Sorting</span>
+                <span class="tag">Complexity</span>
+              </div>
+              <div class="artifact-cta">Preview README →</div>
+            </button>
+
+            <button class="artifact-tile" type="button" data-artifact="db">
+              <div class="artifact-title">Databases</div>
+              <div class="artifact-desc">Validation, error handling, and predictable CRUD behavior with clean layering.</div>
+              <div class="artifact-meta">
+                <span class="tag">CRUD</span>
+                <span class="tag">Integrity</span>
+                <span class="tag">Safety</span>
+              </div>
+              <div class="artifact-cta">Preview README →</div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section section-muted">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">About</h2>
+            <p class="section-sub">Short, recruiter-friendly, and still personal.</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="prose">
+              <p>
+                I’m a software engineer with hands-on experience in full-stack development, algorithms and data structures,
+                database design, and secure coding practices. I care about building systems that are dependable and maintainable
+                because that’s what scales in real environments.
+              </p>
+              <p>
+                I enjoy work where performance and user experience intersect—especially when the solution requires clean architecture,
+                careful tradeoffs, and strong execution.
+              </p>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-title">Contact</div>
+              <a class="contact-link" href="mailto:youremail@example.com">youremail@example.com</a>
+              <a class="contact-link" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="contact-link" href="https://github.com/JullianePamfilo" target="_blank" rel="noreferrer">GitHub</a>
+
+              <div class="contact-actions">
+                <button class="btn btn-primary" id="resumeBtn2" type="button">Resume</button>
+                <button class="btn btn-ghost" id="shortcutsBtn2" type="button">Shortcuts</button>
+              </div>
+            </div>
+          </div>
+
+          <p class="fineprint">
+            Tip: Press <kbd>?</kbd> for keyboard shortcuts. Press <kbd>T</kbd> to toggle theme.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container footer-inner">
+        <div class="footer-left">© <span id="year"></span> Julliane Pamfilo</div>
+        <div class="footer-right">
+          <a href="#top">Back to top</a>
+          <span class="dot">•</span>
+          <a href="./README.md" target="_blank" rel="noreferrer">Repository README</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ARTIFACT MODAL -->
+    <div class="modal" id="artifactModal" role="dialog" aria-modal="true" aria-labelledby="artifactModalTitle" hidden>
+      <div class="modal-backdrop" data-close="artifact"></div>
+
+      <div class="modal-panel" role="document">
+        <div class="modal-head">
+          <div>
+            <div class="modal-kicker">Artifact Preview</div>
+            <h3 id="artifactModalTitle" class="modal-title">Loading…</h3>
+          </div>
+
+          <button class="icon-btn" type="button" data-close="artifact" aria-label="Close artifact modal">✕</button>
+        </div>
+
+        <div class="modal-tabs" role="tablist" aria-label="Artifact preview tabs">
+          <button class="tab" type="button" role="tab" aria-selected="true" data-tab="overview">Overview</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-tab="readme">README</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-tab="links">Links</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="tab-panel" data-panel="overview">
+            <p class="muted" id="artifactOverview">Loading…</p>
+
+            <div class="callout">
+              <div class="callout-title">What I want the reviewer to notice</div>
+              <ul class="checklist" id="artifactBullets"></ul>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="readme" hidden>
+            <div class="readme-toolbar">
+              <button class="btn btn-ghost" type="button" id="reloadReadmeBtn">Reload</button>
+              <a class="btn btn-ghost" id="openReadmeBtn" href="#" target="_blank" rel="noreferrer">Open file</a>
+            </div>
+
+            <div class="readme" id="readmeContainer" aria-live="polite">
+              <div class="skeleton">Loading README…</div>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="links" hidden>
+            <div class="link-grid">
+              <a class="link-card" id="openArtifactFolder" href="./artifacts/" target="_blank" rel="noreferrer">
+                <div class="link-title">Open artifacts folder</div>
+                <div class="link-desc">Browse files on GitHub Pages / GitHub UI</div>
+              </a>
+
+              <a class="link-card" id="openRepoRoot" href="./" target="_blank" rel="noreferrer">
+                <div class="link-title">Open site root</div>
+                <div class="link-desc">Return to the main portfolio page</div>
+              </a>
+            </div>
+
+            <p class="fineprint">
+              If a link opens a directory view, GitHub will display its contents. That’s intentional for navigation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESUME MODAL (PNG viewer) -->
+    <div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeTitle" hidden>
+      <div class="modal-backdrop" data-close="resume"></div>
+
+      <div class="modal-panel modal-panel-wide" role="document">
+        <div class="modal-head">
+          <div>
+            <div class="modal-kicker">Resume Preview</div>
+            <h3 id="resumeTitle" class="modal-title">Julliane Pamfilo — Resume</h3>
+          </div>
+
+          <div class="resume-controls">
+            <button class="btn btn-ghost" type="button" id="prevResume">← Prev</button>
+            <div class="resume-page">
+              Page <span id="resumePageNow">1</span>/<span id="resumePageTotal">1</span>
+            </div>
+            <button class="btn btn-ghost" type="button" id="nextResume">Next →</button>
+            <button class="icon-btn" type="button" data-close="resume" aria-label="Close resume modal">✕</button>
+          </div>
+        </div>
+
+        <div class="modal-body resume-body">
+          <img
+            id="resumeImage"
+            class="resume-image"
+            alt="Resume preview"
+            src="./assets/resume-page-1.png"
+            loading="eager"
+          />
+          <p class="fineprint">
+            Tip: Use <kbd>←</kbd> / <kbd>→</kbd> to switch pages. Press <kbd>Esc</kbd> to close.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHORTCUTS MODAL -->
+    <div class="modal" id="shortcutsModal" role="dialog" aria-modal="true" aria-labelledby="shortcutsTitle" hidden>
+      <div class="modal-backdrop" data-close="shortcuts"></div>
+
+      <div class="modal-panel" role="document">
+        <div class="modal-head">
+          <div>
+            <div class="modal-kicker">Keyboard Navigation</div>
+            <h3 id="shortcutsTitle" class="modal-title">Shortcuts</h3>
+          </div>
+          <button class="icon-btn" type="button" data-close="shortcuts" aria-label="Close shortcuts modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="shortcuts">
+            <div class="shortcut"><kbd>?</kbd><span>Open shortcuts</span></div>
+            <div class="shortcut"><kbd>Esc</kbd><span>Close any modal</span></div>
+            <div class="shortcut"><kbd>T</kbd><span>Toggle theme</span></div>
+            <div class="shortcut"><kbd>R</kbd><span>Open resume</span></div>
+            <div class="shortcut"><kbd>1</kbd><span>Preview SWE artifact</span></div>
+            <div class="shortcut"><kbd>2</kbd><span>Preview ADS artifact</span></div>
+            <div class="shortcut"><kbd>3</kbd><span>Preview DB artifact</span></div>
+          </div>
+
+          <p class="muted">
+            I designed these shortcuts so a reviewer can navigate quickly while the site remains fully usable with mouse/touch.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFORMANCE MODAL -->
+    <div class="modal" id="perfModal" role="dialog" aria-modal="true" aria-labelledby="perfTitle" hidden>
+      <div class="modal-backdrop" data-close="perf"></div>
+
+      <div class="modal-panel" role="document">
+        <div class="modal-head">
+          <div>
+            <div class="modal-kicker">Performance Snapshot</div>
+            <h3 id="perfTitle" class="modal-title">Client timing</h3>
+          </div>
+          <button class="icon-btn" type="button" data-close="perf" aria-label="Close performance modal">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="perf-grid" id="perfGrid">
+            <!-- Populated by JS -->
+          </div>
+          <p class="fineprint">
+            This is a lightweight snapshot using the Performance API. For formal auditing, I run Lighthouse in Chrome DevTools.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" aria-live="polite" aria-atomic="true" hidden></div>
+
+    <script src="./script.js?v=3" defer></script>
+  </body>
 </html>
