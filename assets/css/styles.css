@@ -1,53 +1,45 @@
-/* =========================
-   CSS RESET + VARIABLES
-   ========================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 :root {
-  --bg: #0b1020;
-  --surface: #121933;
-  --card: #1a2142;
-  --primary: #6ea8ff;
-  --accent: #9b8cff;
-  --text: #e6e9f5;
-  --muted: #9aa3c7;
-  --border: rgba(255,255,255,0.08);
-  --radius: 14px;
-  --max-width: 1100px;
+  --bg: #0e0f13;
+  --bg-soft: #151821;
+  --text: #f5f7fa;
+  --muted: #aab0c0;
+  --accent: #6ae3ff;
 }
 
-html {
-  scroll-behavior: smooth;
+body.light {
+  --bg: #f7f8fb;
+  --bg-soft: #ffffff;
+  --text: #111318;
+  --muted: #4a5568;
+  --accent: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
-  background: radial-gradient(circle at top, #121933, #0b1020);
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* =========================
-   NAVIGATION
-   ========================= */
-header {
+/* NAV */
+.nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  background: rgba(14,15,19,0.8);
   backdrop-filter: blur(12px);
-  background: rgba(11,16,32,0.75);
-  border-bottom: 1px solid var(--border);
+  z-index: 100;
 }
 
-.nav-container {
-  max-width: var(--max-width);
+.nav-inner {
+  max-width: 1100px;
   margin: auto;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,98 +47,126 @@ header {
 
 .logo {
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 1px;
 }
 
-.nav-links a {
-  margin-left: 1.5rem;
+nav a {
+  margin-right: 1rem;
   color: var(--muted);
   text-decoration: none;
 }
 
-.nav-links a:hover {
-  color: var(--primary);
+nav a:hover {
+  color: var(--text);
 }
 
-/* =========================
-   HERO
-   ========================= */
+#themeToggle {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* HERO */
 .hero {
-  min-height: 90vh;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 8rem auto 6rem;
+  padding: 0 1.5rem;
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 5vw, 3.5rem);
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  line-height: 1.15;
 }
 
-.hero h2 {
-  color: var(--primary);
-  font-weight: 500;
+.hero h1 span {
+  color: var(--accent);
 }
 
-.hero p {
-  max-width: 700px;
-  margin: 1.5rem auto;
+.hero-sub {
+  max-width: 600px;
   color: var(--muted);
+  margin-top: 1rem;
 }
 
-.hero .btn {
-  margin-top: 1.5rem;
+.hero-actions {
+  margin-top: 2rem;
 }
 
-/* =========================
-   SECTIONS
-   ========================= */
+.primary,
+.secondary {
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.secondary {
+  border: 1px solid var(--muted);
+  color: var(--text);
+}
+
+/* SECTIONS */
 .section {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 6rem auto;
+  padding: 0 1.5rem;
 }
 
-.section h3 {
+.section h2 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* =========================
-   CARDS
-   ========================= */
-.cards {
+.muted {
+  background: var(--bg-soft);
+  padding: 4rem 1.5rem;
+}
+
+/* GRID */
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 
 .card {
-  background: var(--card);
-  padding: 2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  text-decoration: none;
-  color: var(--text);
+  background: var(--bg-soft);
+  padding: 1.75rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: var(--primary);
 }
 
-.card h4 {
-  margin-bottom: 0.75rem;
+/* TEXT */
+.long-text {
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+  color: var(--muted);
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+.artifact-list {
+  max-width: 700px;
+  list-style: none;
+  padding: 0;
+}
+
+.artifact-list li {
+  margin-bottom: 1rem;
+}
+
+/* FOOTER */
 footer {
-  border-top: 1px solid var(--border);
-  padding: 2rem;
   text-align: center;
+  padding: 3rem 1rem;
   color: var(--muted);
 }
