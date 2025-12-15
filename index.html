@@ -3,302 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CS 499 ePortfolio showcasing enhanced artifacts in software design, algorithms & data structures, and databases." />
-  <title>Julliane Pamfilo | CS 499 ePortfolio</title>
+  <meta name="description" content="Julliane Pamfilo | Software Engineer & CS 499 ePortfolio" />
+  <title>Julliane Pamfilo — Software Engineer</title>
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
-
-  <!-- Fonts -->
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
 
 <body>
 
-  <!-- Skip link for accessibility -->
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- ================= NAVIGATION ================= -->
-  <header class="nav" role="banner">
-    <div class="nav-container">
-      <div class="logo" aria-label="Site logo">JP</div>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#self-assessment">Self-Assessment</a>
-        <a href="#code-review">Code Review</a>
-        <a href="#artifacts">Artifacts</a>
-        <a href="#about">About</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark/light theme">
-          Toggle Theme
-        </button>
-        <button class="btn ghost" id="resumeBtn" type="button" aria-haspopup="dialog">
-          View Resume
-        </button>
-      </div>
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="nav-inner container">
+    <div class="brand">
+      <div class="brand-mark">JP</div>
+      <span class="brand-name">Julliane Pamfilo</span>
     </div>
-  </header>
 
-  <main id="main">
+    <nav class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#artifacts" class="nav-link">Artifacts</a>
+      <a href="#review" class="nav-link">Code Review</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
 
-    <!-- ================= HERO ================= -->
-    <section class="hero reveal" aria-label="Hero section">
-      <div class="hero-content">
-        <h1>Julliane Pamfilo</h1>
-        <h2>Software Engineer</h2>
+    <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+      ◐
+    </button>
+  </div>
+</header>
 
-        <p class="hero-subtext">
-          I design and build scalable full-stack systems, applied AI solutions, and production-ready web platforms
-          with a focus on performance, maintainability, and real-world impact.
-        </p>
+<main>
 
-        <div class="hero-buttons">
-          <a href="#artifacts" class="btn primary">Explore My Work</a>
-          <button class="btn secondary" id="openShortcuts" type="button" aria-haspopup="dialog">
-            Keyboard Shortcuts
-          </button>
-        </div>
+<!-- ================= HERO ================= -->
+<section class="hero container">
+  <p class="hero-eyebrow">CS 499 ePortfolio</p>
 
-        <div class="hero-badges" aria-label="Key focus areas">
-          <span class="badge">Full-Stack</span>
-          <span class="badge">Algorithms</span>
-          <span class="badge">Databases</span>
-          <span class="badge">Secure Coding</span>
-        </div>
-      </div>
-    </section>
+  <h1 class="hero-title">
+    Engineering <span class="gradient-text">robust systems</span><br>
+    with clarity and intent
+  </h1>
 
-    <!-- ================= SELF-ASSESSMENT ================= -->
-    <section id="self-assessment" class="section reveal">
-      <div class="section-header">
-        <h3>Professional Self-Assessment</h3>
-        <p class="muted">
-          This section serves as a holistic introduction to my skills, growth, and readiness to contribute in professional software environments.
-        </p>
-      </div>
+  <p class="hero-description">
+    I design and implement scalable, maintainable software systems with a strong
+    emphasis on algorithms, data integrity, and professional engineering practices.
+  </p>
 
-      <div class="content-block">
-        <p>
-          In the Computer Science program, I transformed from a student learning foundational constructs into a professional-ready Software Engineer
-          able to design, implement, and enhance pragmatic systems. Across the program, my focus shifted from simply making code work to engineering
-          for scalability, maintainability, security, and usability.
-        </p>
-        <p>
-          This ePortfolio highlights that progression through three enhanced artifacts aligned to software design, algorithms & data structures, and databases.
-          Each enhancement demonstrates deliberate decision-making, measurable technical improvements, and professional documentation practices.
-        </p>
-      </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-value">4+</span>
+      <span class="stat-label">Years Development</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">CS</span>
+      <span class="stat-label">Systems Focus</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">A+</span>
+      <span class="stat-label">Engineering Mindset</span>
+    </div>
+  </div>
+</section>
 
-      <div class="inline-actions">
-        <a class="btn tertiary" href="#artifacts">Jump to Artifacts</a>
-      </div>
-    </section>
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section glass">
+  <div class="container">
+    <h2 class="section-title">Professional Overview</h2>
 
-    <!-- ================= CODE REVIEW ================= -->
-    <section id="code-review" class="section reveal">
-      <div class="section-header">
-        <h3>Informal Code Review</h3>
-        <p class="muted">
-          A walkthrough of existing functionality, code analysis, and the enhancement strategy used to improve each artifact.
-        </p>
-      </div>
-
-      <div class="video-card">
-        <div class="video-meta">
-          <p class="video-title">CS 499 Code Review Video</p>
-          <p class="muted">Hosted on YouTube for reliability and file size constraints.</p>
-        </div>
-
-        <div class="video-actions">
-          <a class="btn primary" href="https://youtu.be/9Xwo-AlOMqo" target="_blank" rel="noopener noreferrer">
-            Watch Code Review
-          </a>
-          <button class="btn ghost" id="copyVideoLink" type="button">
-            Copy Link
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= ARTIFACTS ================= -->
-    <section id="artifacts" class="section reveal">
-      <div class="section-header">
-        <h3>Enhanced Artifacts</h3>
-        <p class="muted">
-          Click any artifact card to preview the README and open the enhanced source files — without leaving this page.
-        </p>
-      </div>
-
-      <div class="cards" role="list">
-
-        <!-- Artifact 1 -->
-        <button class="card card-btn"
-          type="button"
-          role="listitem"
-          data-modal-title="Software Design & Engineering"
-          data-modal-readme="artifacts/artifact1_software_design/README.md"
-          data-modal-files='[
-            {"label":"Enhanced Notebook","href":"artifacts/artifact1_software_design/ProjectTwoDashboard_Enhanced.ipynb"},
-            {"label":"Repository Folder","href":"artifacts/artifact1_software_design/"}
-          ]'>
-          <h4>Software Design & Engineering</h4>
-          <p>
-            Dashboard application demonstrating modular design, clean separation of concerns, and maintainable engineering practices.
-          </p>
-          <span class="chip">Preview README</span>
-        </button>
-
-        <!-- Artifact 2 -->
-        <button class="card card-btn"
-          type="button"
-          role="listitem"
-          data-modal-title="Algorithms & Data Structures"
-          data-modal-readme="artifacts/artifact2_algorithms/README.md"
-          data-modal-files='[
-            {"label":"Enhanced C++ Source","href":"artifacts/artifact2_algorithms/ProjectTwo_Enhanced.cpp"},
-            {"label":"Repository Folder","href":"artifacts/artifact2_algorithms/"}
-          ]'>
-          <h4>Algorithms & Data Structures</h4>
-          <p>
-            Course planning system optimized with appropriate data structures (hash map + sorted output) and stronger validation.
-          </p>
-          <span class="chip">Preview README</span>
-        </button>
-
-        <!-- Artifact 3 -->
-        <button class="card card-btn"
-          type="button"
-          role="listitem"
-          data-modal-title="Databases"
-          data-modal-readme="artifacts/artifact3_databases/README.md"
-          data-modal-files='[
-            {"label":"Enhanced CRUD Module","href":"artifacts/artifact3_databases/aac_crud_Enchanced.py"},
-            {"label":"Repository Folder","href":"artifacts/artifact3_databases/"}
-          ]'>
-          <h4>Databases</h4>
-          <p>
-            CRUD module emphasizing validation, error handling, and cleaner separation between data access and application logic.
-          </p>
-          <span class="chip">Preview README</span>
-        </button>
-
-      </div>
-    </section>
-
-    <!-- ================= ABOUT ================= -->
-    <section id="about" class="section reveal">
-      <div class="section-header">
-        <h3>About Me</h3>
-        <p class="muted">
-          My specialization centers on full-stack development, pragmatic system design, and building reliable software with a security mindset.
-        </p>
-      </div>
-
-      <div class="content-block">
-        <p>
-          I’m Julliane Pamfilo, a Software Engineer with hands-on experience in full-stack development, algorithms and data structures,
-          database design, and secure coding practices. I approach engineering with an emphasis on clean architecture, scalability,
-          and thoughtful user experience.
-        </p>
-      </div>
-
-      <div class="inline-actions">
-        <button class="btn secondary" id="resumeBtn2" type="button" aria-haspopup="dialog">
-          View Resume
-        </button>
-        <a class="btn tertiary" href="README.md" target="_blank" rel="noopener noreferrer">
-          View Repository README
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer" role="contentinfo">
-    <p>
-      © 2025 Julliane Pamfilo •
-      <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231" target="_blank" rel="noopener noreferrer">LinkedIn</a> •
-      <a href="mailto:pamfilojulliane@yahoo.com">Email</a>
+    <p class="section-text">
+      Throughout the Computer Science program, I evolved from focusing solely on
+      correctness to engineering software that is modular, secure, and built for
+      long-term maintainability.
     </p>
-  </footer>
 
-  <!-- ================= MODAL: ARTIFACT PREVIEW ================= -->
-  <div class="modal" id="artifactModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="artifactModalTitle">
-    <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-panel" role="document">
-      <div class="modal-header">
-        <h4 id="artifactModalTitle">Artifact</h4>
-        <button class="icon-btn" type="button" aria-label="Close" data-close="true">×</button>
-      </div>
-
-      <div class="modal-body">
-        <div class="modal-columns">
-          <div class="modal-col">
-            <p class="modal-label">README Preview</p>
-            <div class="readme-box" id="readmeBox" aria-live="polite">
-              <p class="muted">Loading…</p>
-            </div>
-          </div>
-
-          <div class="modal-col">
-            <p class="modal-label">Open Files</p>
-            <div class="modal-links" id="artifactLinks"></div>
-
-            <div class="modal-note">
-              <p class="muted">
-                If a link opens a folder view, GitHub will display the directory contents. This is intentional for clarity and navigation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button class="btn ghost" type="button" data-close="true">Close</button>
-      </div>
-    </div>
+    <p class="section-text">
+      This portfolio demonstrates that growth through enhanced artifacts aligned
+      with software design, algorithms and data structures, and databases.
+      Each artifact reflects deliberate design decisions and professional standards.
+    </p>
   </div>
+</section>
 
-  <!-- ================= MODAL: RESUME OVERLAY ================= -->
-  <div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="resumeModalTitle">
-    <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-panel modal-panel-wide" role="document">
-      <div class="modal-header">
-        <h4 id="resumeModalTitle">Resume</h4>
-        <div class="modal-header-actions">
-          <button class="btn ghost" id="resumePrev" type="button">Prev</button>
-          <button class="btn ghost" id="resumeNext" type="button">Next</button>
-          <button class="icon-btn" type="button" aria-label="Close" data-close="true">×</button>
-        </div>
-      </div>
+<!-- ================= ARTIFACTS ================= -->
+<section id="artifacts" class="section">
+  <div class="container">
+    <h2 class="section-title">Enhanced Artifacts</h2>
 
-      <div class="modal-body">
-        <div class="resume-frame">
-          <img
-            id="resumeImage"
-            src="assets/img/resume/Julliane-Pamfilo-Resume-1.png"
-            alt="Julliane Pamfilo resume preview"
-            loading="eager"
-          />
-        </div>
-        <p class="muted resume-hint">
-          Tip: Use Left/Right arrow keys to switch pages. Press Esc to close.
+    <div class="artifact-grid">
+
+      <article class="artifact-card">
+        <h3>Software Design & Engineering</h3>
+        <p>
+          Dashboard application enhanced for modularity, separation of concerns,
+          and clean architectural boundaries.
         </p>
-      </div>
+        <span class="artifact-tag">Design</span>
+      </article>
+
+      <article class="artifact-card">
+        <h3>Algorithms & Data Structures</h3>
+        <p>
+          Course planning system optimized using appropriate data structures to
+          improve runtime performance and reliability.
+        </p>
+        <span class="artifact-tag">Algorithms</span>
+      </article>
+
+      <article class="artifact-card">
+        <h3>Databases</h3>
+        <p>
+          CRUD module strengthened with improved validation, error handling,
+          and data integrity safeguards.
+        </p>
+        <span class="artifact-tag">Databases</span>
+      </article>
+
     </div>
   </div>
+</section>
 
-      <div class="modal-footer">
-        <button class="btn ghost" type="button" data-close="true">Close</button>
-      </div>
+<!-- ================= CODE REVIEW ================= -->
+<section id="review" class="section glass">
+  <div class="container">
+    <h2 class="section-title">Informal Code Review</h2>
+
+    <p class="section-text">
+      This video provides a walkthrough of my original artifacts, identified
+      limitations, and the rationale behind each enhancement.
+    </p>
+
+    <a class="primary-btn"
+       href="https://youtu.be/9Xwo-AlOMqo"
+       target="_blank"
+       rel="noopener noreferrer">
+      Watch on YouTube
+    </a>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="section-title">Connect</h2>
+
+    <div class="contact-grid">
+      <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="contact-card">
+        LinkedIn
+      </a>
+
+      <a href="mailto:pamfilojulliane@yahoo.com"
+         class="contact-card">
+        Email
+      </a>
+
+      <a href="https://youtu.be/9Xwo-AlOMqo"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="contact-card">
+        YouTube
+      </a>
     </div>
   </div>
+</section>
 
-  <!-- Main JS (place BEFORE </body>) -->
-  <script src="assets/js/main.js"></script>
+</main>
+
+<footer class="footer">
+  <p>© 2025 Julliane Pamfilo</p>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
