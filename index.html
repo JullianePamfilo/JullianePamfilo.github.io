@@ -29,7 +29,7 @@
     />
 
     <!-- IMPORTANT: cache-bust so GitHub Pages updates show immediately -->
-    <link rel="stylesheet" href="./styles.css?v=3" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=3" />
   </head>
 
   <body>
@@ -535,8 +535,17 @@
     </div>
 
     <!-- Toast -->
-    <div class="toast" id="toast" aria-live="polite" aria-atomic="true" hidden></div>
+    <!-- Toast (used for keyboard hints, confirmations, and system feedback) -->
+<div
+  class="toast"
+  id="toast"
+  aria-live="polite"
+  aria-atomic="true"
+  hidden
+></div>
 
-    <script src="./script.js?v=3" defer></script>
-  </body>
+<!-- Main interaction + accessibility logic -->
+<script src="assets/js/main.js?v=3" defer></script>
+</body>
 </html>
+
