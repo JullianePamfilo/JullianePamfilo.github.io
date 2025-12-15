@@ -1,54 +1,49 @@
-/* =====================================================
-   Global Variables & Reset
-   ===================================================== */
+/* =====================
+   Global Design System
+===================== */
 
 :root {
-  --bg-main: #0b0f1a;
-  --bg-soft: #11162a;
-  --card-bg: #161c35;
+  --bg-main: radial-gradient(circle at top, #0b1220, #020409);
+  --bg-glass: rgba(255, 255, 255, 0.06);
+  --border-glass: rgba(255, 255, 255, 0.15);
 
-  --text-main: #e6e9f5;
-  --text-muted: #a6acd6;
+  --text-main: #e6e8ef;
+  --text-muted: #9aa4bf;
+  --accent: #7dd3fc;
 
-  --accent: #6c8cff;
-  --accent-soft: rgba(108, 140, 255, 0.15);
-
-  --border: rgba(255, 255, 255, 0.08);
+  --radius: 14px;
+  --transition: 0.4s ease;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Inter", sans-serif;
-  background: radial-gradient(1200px 600px at 50% -200px, #1a2355, var(--bg-main));
+  background: var(--bg-main);
   color: var(--text-main);
   line-height: 1.6;
 }
 
-/* =====================================================
+/* =====================
    Navigation
-   ===================================================== */
+===================== */
 
 .nav {
   position: sticky;
   top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(5, 8, 20, 0.65);
+  border-bottom: 1px solid var(--border-glass);
   z-index: 100;
-  background: rgba(11, 15, 26, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
 }
 
 .nav-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -57,167 +52,147 @@ body {
 
 .logo {
   font-weight: 700;
-  font-size: 1.2rem;
+  letter-spacing: 2px;
   color: var(--accent);
 }
 
 .nav-links a {
   margin-left: 1.5rem;
-  color: var(--text-muted);
   text-decoration: none;
-  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition);
 }
 
 .nav-links a:hover {
-  color: var(--text-main);
+  color: var(--accent);
 }
 
-/* =====================================================
-   Hero Section
-   ===================================================== */
+/* =====================
+   Hero
+===================== */
 
 .hero {
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
   text-align: center;
-  padding: 2rem;
-}
-
-.hero-content {
-  max-width: 900px;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: clamp(3rem, 5vw, 4rem);
 }
 
 .hero h2 {
-  font-size: 1.5rem;
-  font-weight: 400;
+  color: var(--accent);
+  font-weight: 500;
   margin-top: 0.5rem;
-  color: var(--text-muted);
 }
 
 .hero-subtext {
-  margin: 2rem auto;
-  max-width: 700px;
+  max-width: 720px;
+  margin: 1.5rem auto;
   color: var(--text-muted);
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* =====================================================
-   Buttons
-   ===================================================== */
-
 .btn {
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
-  font-weight: 600;
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius);
   text-decoration: none;
-  transition: all 0.25s ease;
+  margin: 0.5rem;
+  transition: var(--transition);
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, var(--accent), #8fa4ff);
-  color: #0b0f1a;
-}
-
-.btn.primary:hover {
-  transform: translateY(-2px);
+  background: var(--accent);
+  color: #020409;
 }
 
 .btn.secondary {
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-glass);
   color: var(--text-main);
 }
 
-.btn.secondary:hover {
-  background: var(--accent-soft);
+.btn:hover {
+  transform: translateY(-4px);
 }
 
-/* =====================================================
+/* =====================
    Sections
-   ===================================================== */
+===================== */
 
 .section {
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 5rem 2rem;
+  margin: auto;
+  padding: 6rem 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: var(--transition);
 }
 
-.section h3 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* =====================================================
+.section-alt {
+  background: rgba(255,255,255,0.02);
+}
+
+/* =====================
    Cards
-   ===================================================== */
+===================== */
 
 .cards {
   display: grid;
+  gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  margin-top: 3rem;
 }
 
 .card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.75rem;
+  padding: 2rem;
+  border-radius: var(--radius);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(14px);
   text-decoration: none;
-  color: var(--text-main);
-  transition: all 0.25s ease;
+  color: inherit;
+  transition: var(--transition);
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: var(--accent);
 }
 
 .card h4 {
-  margin-bottom: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
 }
 
-/* =====================================================
-   Resume
-   ===================================================== */
+/* =====================
+   Video
+===================== */
 
-.resume-section {
-  background: linear-gradient(180deg, transparent, var(--bg-soft));
-}
-
-.resume-images {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+.video-wrapper {
   margin-top: 2rem;
+  aspect-ratio: 16 / 9;
 }
 
-.resume-images img {
+.video-wrapper iframe {
   width: 100%;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  height: 100%;
+  border-radius: var(--radius);
 }
 
-/* =====================================================
+/* =====================
    Footer
-   ===================================================== */
+===================== */
 
 .footer {
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid var(--border);
   color: var(--text-muted);
 }
 
@@ -225,8 +200,3 @@ body {
   color: var(--accent);
   text-decoration: none;
 }
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
