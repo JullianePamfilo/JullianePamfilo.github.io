@@ -20,7 +20,7 @@
     rel="stylesheet"
   />
 
-  <!-- Preload resume (small performance win) -->
+  <!-- Preload resume -->
   <link
     rel="preload"
     as="image"
@@ -36,7 +36,7 @@
   <!-- ================= NAVIGATION ================= -->
   <header class="nav" role="banner">
     <div class="nav-container">
-      <div class="logo" aria-label="Site logo">JP</div>
+      <div class="logo">JP</div>
 
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#self-assessment">Self-Assessment</a>
@@ -50,15 +50,15 @@
           class="theme-toggle"
           id="themeToggle"
           type="button"
-          aria-label="Toggle dark/light theme"
+          aria-label="Toggle theme"
         >
           Toggle Theme
         </button>
+
         <button
           class="btn ghost"
           id="resumeBtn"
           type="button"
-          aria-haspopup="dialog"
         >
           View Resume
         </button>
@@ -82,14 +82,6 @@
 
         <div class="hero-buttons">
           <a href="#artifacts" class="btn primary">Explore My Work</a>
-          <button
-            class="btn secondary"
-            id="openShortcuts"
-            type="button"
-            aria-haspopup="dialog"
-          >
-            Keyboard Shortcuts
-          </button>
         </div>
 
         <div class="hero-badges">
@@ -106,26 +98,21 @@
       <div class="section-header">
         <h3>Professional Self-Assessment</h3>
         <p class="muted">
-          This section serves as a holistic introduction to my skills, growth,
-          and readiness to contribute in professional software environments.
+          This section introduces my skills, growth, and professional readiness.
         </p>
       </div>
 
       <div class="content-block">
         <p>
-          In the Computer Science program, I transformed from a student learning
-          foundational constructs into a professional-ready Software Engineer
-          able to design, implement, and enhance pragmatic systems.
+          Throughout the Computer Science program, I evolved from focusing on
+          functional correctness to engineering software that is scalable,
+          maintainable, and secure.
         </p>
         <p>
-          This ePortfolio highlights that progression through three enhanced
+          This ePortfolio demonstrates that progression through three enhanced
           artifacts aligned to software design, algorithms & data structures,
           and databases.
         </p>
-      </div>
-
-      <div class="inline-actions">
-        <a class="btn tertiary" href="#artifacts">Jump to Artifacts</a>
       </div>
     </section>
 
@@ -134,27 +121,21 @@
       <div class="section-header">
         <h3>Informal Code Review</h3>
         <p class="muted">
-          A walkthrough of existing functionality, code analysis,
-          and enhancement strategy.
+          A walkthrough explaining original functionality, risks, and improvements.
         </p>
       </div>
 
       <div class="video-card">
-        <div class="video-meta">
-          <p class="video-title">CS 499 Code Review Video</p>
-          <p class="muted">Hosted on YouTube.</p>
-        </div>
+        <p class="video-title">CS 499 Code Review Video</p>
 
-        <div class="video-actions">
-          <a
-            class="btn primary"
-            href="https://youtu.be/9Xwo-AlOMqo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Watch Code Review
-          </a>
-        </div>
+        <a
+          class="btn primary"
+          href="https://youtu.be/9Xwo-AlOMqo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Watch on YouTube
+        </a>
       </div>
     </section>
 
@@ -163,7 +144,7 @@
       <div class="section-header">
         <h3>Enhanced Artifacts</h3>
         <p class="muted">
-          Click any artifact card to preview the README.
+          Click an artifact to preview its README.
         </p>
       </div>
 
@@ -176,10 +157,7 @@
           data-modal-readme="artifacts/artifact1_software_design/README.md"
         >
           <h4>Software Design & Engineering</h4>
-          <p>
-            Modular dashboard with clean separation of concerns
-            and maintainable architecture.
-          </p>
+          <p>Modular dashboard with clean architecture.</p>
           <span class="chip">Preview README</span>
         </button>
 
@@ -190,9 +168,7 @@
           data-modal-readme="artifacts/artifact2_algorithms/README.md"
         >
           <h4>Algorithms & Data Structures</h4>
-          <p>
-            Optimized course planner using appropriate data structures.
-          </p>
+          <p>Optimized data structures for performance.</p>
           <span class="chip">Preview README</span>
         </button>
 
@@ -203,9 +179,7 @@
           data-modal-readme="artifacts/artifact3_databases/README.md"
         >
           <h4>Databases</h4>
-          <p>
-            CRUD module emphasizing validation, integrity, and error handling.
-          </p>
+          <p>Validated CRUD operations with integrity.</p>
           <span class="chip">Preview README</span>
         </button>
 
@@ -216,22 +190,17 @@
     <section id="about" class="section reveal">
       <div class="section-header">
         <h3>About Me</h3>
-        <p class="muted">
-          Full-stack developer focused on scalable, reliable systems.
-        </p>
       </div>
 
       <div class="content-block">
         <p>
-          I’m Julliane Pamfilo, a Software Engineer with experience in full-stack
-          development, algorithms, databases, and secure coding practices.
+          I’m Julliane Pamfilo, a software engineer with experience in full-stack
+          development, algorithms, databases, and secure coding.
         </p>
       </div>
 
       <div class="inline-actions">
-        <button class="btn secondary" id="resumeBtn2" type="button">
-          View Resume
-        </button>
+        <button class="btn secondary" id="resumeBtn2">View Resume</button>
 
         <a
           class="btn tertiary"
@@ -242,8 +211,11 @@
           LinkedIn
         </a>
 
-        <a class="btn tertiary" href="mailto:pamfilojulliane@yahoo.com">
-          Email Me
+        <a
+          class="btn tertiary"
+          href="mailto:pamfilojulliane@yahoo.com"
+        >
+          Email
         </a>
       </div>
     </section>
@@ -251,13 +223,12 @@
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <p>
       © 2025 Julliane Pamfilo •
       <a
         href="https://www.linkedin.com/in/julliane-pamfilo-750266231"
         target="_blank"
-        rel="noopener noreferrer"
       >
         LinkedIn
       </a>
@@ -269,7 +240,6 @@
       <a
         href="https://youtu.be/9Xwo-AlOMqo"
         target="_blank"
-        rel="noopener noreferrer"
       >
         Code Review Video
       </a>
@@ -277,6 +247,7 @@
   </footer>
 
   <!-- ================= MODALS ================= -->
+
   <!-- Artifact Modal -->
   <div class="modal" id="artifactModal" aria-hidden="true">
     <div class="modal-backdrop" data-close="true"></div>
@@ -296,20 +267,6 @@
         src="assets/img/resume/Julliane-Pamfilo-Resume-1.png"
         alt="Resume preview"
       />
-      <button class="btn ghost" data-close="true">Close</button>
-    </div>
-  </div>
-
-  <!-- Shortcuts Modal -->
-  <div class="modal" id="shortcutsModal" aria-hidden="true">
-    <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-panel">
-      <h4>Keyboard Shortcuts</h4>
-      <ul>
-        <li><strong>T</strong> — Toggle theme</li>
-        <li><strong>R</strong> — Open resume</li>
-        <li><strong>Esc</strong> — Close modal</li>
-      </ul>
       <button class="btn ghost" data-close="true">Close</button>
     </div>
   </div>
