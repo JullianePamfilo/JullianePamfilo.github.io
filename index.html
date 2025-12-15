@@ -1,177 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    I built this portfolio to represent who I am as a software engineer.
-    It’s designed to communicate clarity, intention, and real-world readiness
-    to both instructors and employers.
-  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Julliane Pamfilo | Software Engineer</title>
 
-  <!-- SEO & Metadata -->
-  <meta name="description" content="Software Engineer portfolio showcasing full-stack development, algorithms, databases, and secure software design." />
-  <meta name="author" content="Julliane Pamfilo" />
+  <!-- Meta -->
+  <meta name="description"
+        content="Software Engineer specializing in full-stack development, applied AI, and scalable system design." />
 
-  <!-- Styles -->
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap"
+        rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
-  <!-- Accessibility -->
-  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- ================= HEADER ================= -->
+  <!-- ================= NAV ================= -->
   <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">
-        <h1 class="logo">Julliane<span>.</span></h1>
-        <span class="tagline">Software Engineer</span>
-      </div>
+    <div class="nav-container">
+      <span class="logo">JP</span>
 
-      <nav class="nav">
+      <nav class="nav-links">
         <a href="#about">About</a>
-        <a href="#artifacts">Work</a>
-        <a href="#skills">Expertise</a>
-        <a href="#contact">Contact</a>
+        <a href="#artifacts">Artifacts</a>
+        <button class="btn ghost" id="openResume">View Resume</button>
       </nav>
     </div>
   </header>
 
-  <!-- ================= MAIN ================= -->
-  <main id="main">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <h1>Julliane Pamfilo</h1>
+    <h2>Software Engineer</h2>
 
-    <!-- ================= HERO ================= -->
-    <section class="hero">
-      <div class="hero-content">
-        <h2>
-          I build software that is<br />
-          <span>intentional, scalable, and secure</span>
-        </h2>
+    <p class="hero-subtext">
+      I design and build scalable full-stack systems, applied AI solutions,
+      and production-ready web platforms with a focus on performance,
+      maintainability, and real-world impact.
+    </p>
 
-        <p class="hero-subtext">
-          I’m a Software Engineer with 5+ years of hands-on experience in full-stack
-          development and AI-driven applications, specializing in modern web systems,
-          clean architecture, and real-world problem solving.
+    <div class="hero-actions">
+      <a href="#artifacts" class="btn primary">Explore My Work</a>
+      <button class="btn ghost" id="openResumeHero">View Resume</button>
+    </div>
+
+    <div class="hero-glow"></div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section">
+    <h3 class="section-title">About Me</h3>
+
+    <p>
+      I’m Julliane Pamfilo, a Software Engineer with hands-on experience in
+      full-stack development, algorithms and data structures, database design,
+      and secure coding practices.
+    </p>
+
+    <p>
+      I currently serve as a Founding Engineer at DADO, where I lead frontend
+      architecture and full-stack development for a luxury gifting technology
+      platform. My approach to engineering centers on intentional system design,
+      thoughtful UX, and building software that scales beyond initial use cases.
+    </p>
+  </section>
+
+  <!-- ================= ARTIFACTS ================= -->
+  <section id="artifacts" class="section">
+    <h3 class="section-title">Capstone Artifacts</h3>
+
+    <div class="artifact-grid">
+      <div class="artifact-card">
+        <h4>Software Design & Engineering</h4>
+        <p>
+          Demonstrates my ability to design modular, maintainable systems using
+          client-server architecture and clean separation of concerns.
         </p>
-
-        <div class="hero-actions">
-          <a href="#artifacts" class="btn primary">View My Work</a>
-          <a href="assets/docs/Julliane-Pamfilo-Software-Engineer.pdf" class="btn ghost" download>
-            Download Resume
-          </a>
-        </div>
+        <a href="artifacts/artifact1_software_design/README.md">View Artifact</a>
       </div>
 
-      <div class="hero-glow"></div>
-    </section>
-
-    <!-- ================= ABOUT ================= -->
-    <section id="about" class="section">
-      <h3 class="section-title">About Me</h3>
-
-      <p>
-        I’m Julliane Pamfilo, a Software Engineer and Founding Engineer at DADO, a luxury
-        gifting technology startup. I focus on building high-quality digital products
-        that balance performance, maintainability, and user experience.
-      </p>
-
-      <p>
-        My background spans full-stack development, algorithms and data structures,
-        database design, and secure coding practices. I approach engineering with
-        intention—thinking beyond “does it work?” to “will this scale, and can others
-        build on it confidently?”
-      </p>
-    </section>
-
-    <!-- ================= ARTIFACTS ================= -->
-    <section id="artifacts" class="section dark">
-      <h3 class="section-title">Selected Work</h3>
-
-      <div class="cards">
-        <article class="card">
-          <h4>Software Design & Engineering</h4>
-          <p>
-            A modular dashboard application demonstrating clean architecture,
-            separation of concerns, and maintainable design patterns.
-          </p>
-          <a href="artifacts/artifact1_software_design/README.md" class="card-link">
-            Explore Project →
-          </a>
-        </article>
-
-        <article class="card">
-          <h4>Algorithms & Data Structures</h4>
-          <p>
-            A course advising system optimized through improved data structure
-            selection, algorithm efficiency, and runtime analysis.
-          </p>
-          <a href="artifacts/artifact2_algorithms/README.md" class="card-link">
-            Explore Project →
-          </a>
-        </article>
-
-        <article class="card">
-          <h4>Databases</h4>
-          <p>
-            A database-driven application showcasing robust CRUD operations,
-            validation, and performance-aware query design.
-          </p>
-          <a href="artifacts/artifact3_databases/README.md" class="card-link">
-            Explore Project →
-          </a>
-        </article>
+      <div class="artifact-card">
+        <h4>Algorithms & Data Structures</h4>
+        <p>
+          Highlights my work with efficient data structures, runtime analysis,
+          and algorithmic problem solving in C++ and Java.
+        </p>
+        <a href="artifacts/artifact2_algorithms/README.md">View Artifact</a>
       </div>
-    </section>
 
-    <!-- ================= SKILLS ================= -->
-    <section id="skills" class="section">
-      <h3 class="section-title">Technical Expertise</h3>
-
-      <ul class="skills-grid">
-        <li>Java • Python • JavaScript • TypeScript</li>
-        <li>React • Node.js • MERN Stack</li>
-        <li>Data Structures & Algorithms</li>
-        <li>SQL & NoSQL Databases</li>
-        <li>AI Integrations (LangChain, RAG)</li>
-        <li>Secure Coding & Validation</li>
-      </ul>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-    <section id="contact" class="section dark">
-      <h3 class="section-title">Let’s Connect</h3>
-
-      <p>
-        I’m actively open to software engineering opportunities and collaborative
-        projects. Whether you’re building a product or exploring an idea, I’m
-        always happy to connect.
-      </p>
-
-      <div class="contact-links">
-        <a href="mailto:pamfilojulliane@yahoo.com">pamfilojulliane@yahoo.com</a>
-        <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231" target="_blank">
-          LinkedIn
-        </a>
-        <a href="https://github.com/JullianePamfilo" target="_blank">
-          GitHub
-        </a>
+      <div class="artifact-card">
+        <h4>Databases</h4>
+        <p>
+          Showcases database design, CRUD operations, and real-time data
+          interaction using MongoDB and Python.
+        </p>
+        <a href="artifacts/artifact3_databases/README.md">View Artifact</a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- ================= RESUME MODAL ================= -->
+  <div class="resume-modal" id="resumeModal">
+    <div class="resume-content">
+      <button class="close-btn" id="closeResume">&times;</button>
+
+      <h3>Resume</h3>
+
+      <div class="resume-images">
+        <img src="assets/img/resume/Julliane-Pamfilo-Resume-1.png"
+             alt="Julliane Pamfilo Resume Page 1" />
+
+        <img src="assets/img/resume/Julliane-Pamfilo-Resume-2.png"
+             alt="Julliane Pamfilo Resume Page 2" />
+      </div>
+    </div>
+  </div>
 
   <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <p>
-      © <span id="year"></span> Julliane Pamfilo • Designed & built with intention
+      © <span id="year"></span> Julliane Pamfilo ·
+      <a href="mailto:pamfilojulliane@yahoo.com">pamfilojulliane@yahoo.com</a> ·
+      <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231"
+         target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 
+  <!-- ================= SCRIPT ================= -->
   <script>
-    // I keep this small script to automatically update the year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // I keep this script intentionally simple so it stays reliable and readable.
+
+    const resumeModal = document.getElementById("resumeModal");
+    const openButtons = [
+      document.getElementById("openResume"),
+      document.getElementById("openResumeHero")
+    ];
+    const closeButton = document.getElementById("closeResume");
+
+    openButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        resumeModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    closeButton.addEventListener("click", () => {
+      resumeModal.classList.remove("active");
+      document.body.style.overflow = "auto";
+    });
+
+    // I dynamically update the year so I never have to touch the footer again.
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
