@@ -1,185 +1,120 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Julliane Pamfilo | Software Engineer & CS 499 ePortfolio" />
-  <title>Julliane Pamfilo — Software Engineer</title>
+  <title>Julliane Pamfilo | Software Engineer</title>
 
-  <!-- Typography -->
+  <meta name="description" content="Julliane Pamfilo — Software Engineer specializing in full-stack systems, algorithms, and databases." />
+
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- ================= NAV ================= -->
-<header class="nav">
-  <div class="nav-inner container">
-    <div class="brand">
-      <div class="brand-mark">JP</div>
-      <span class="brand-name">Julliane Pamfilo</span>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">JP</div>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#artifacts">Artifacts</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <nav class="nav-links">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#artifacts" class="nav-link">Artifacts</a>
-      <a href="#review" class="nav-link">Code Review</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Julliane Pamfilo</h1>
+      <h2>Software Engineer</h2>
 
-    <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
-      ◐
-    </button>
-  </div>
-</header>
+      <p>
+        I design and build scalable, maintainable, and secure software systems.
+        My focus is full-stack engineering, algorithms, and data-driven applications
+        built with real-world constraints in mind.
+      </p>
 
-<main>
-
-<!-- ================= HERO ================= -->
-<section class="hero container">
-  <p class="hero-eyebrow">CS 499 ePortfolio</p>
-
-  <h1 class="hero-title">
-    Engineering <span class="gradient-text">robust systems</span><br>
-    with clarity and intent
-  </h1>
-
-  <p class="hero-description">
-    I design and implement scalable, maintainable software systems with a strong
-    emphasis on algorithms, data integrity, and professional engineering practices.
-  </p>
-
-  <div class="hero-stats">
-    <div class="stat">
-      <span class="stat-value">4+</span>
-      <span class="stat-label">Years Development</span>
+      <div class="hero-actions">
+        <a href="#artifacts" class="btn primary">View My Work</a>
+        <a href="#contact" class="btn secondary">Get In Touch</a>
+      </div>
     </div>
-    <div class="stat">
-      <span class="stat-value">CS</span>
-      <span class="stat-label">Systems Focus</span>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <h3>About Me</h3>
+      <p>
+        I’m a Computer Science graduate with hands-on experience in software design,
+        algorithms, data structures, and database systems. I approach engineering
+        with an emphasis on clarity, scalability, and professional-grade solutions.
+      </p>
     </div>
-    <div class="stat">
-      <span class="stat-value">A+</span>
-      <span class="stat-label">Engineering Mindset</span>
+  </section>
+
+  <!-- ===== ARTIFACTS ===== -->
+  <section id="artifacts" class="section dark">
+    <div class="section-inner">
+      <h3>Enhanced Artifacts</h3>
+
+      <div class="grid">
+
+        <article class="card">
+          <h4>Software Design & Engineering</h4>
+          <p>
+            Modular dashboard system focused on separation of concerns,
+            maintainability, and clean architecture.
+          </p>
+          <a href="https://github.com/JullianePamfilo" target="_blank">View Source →</a>
+        </article>
+
+        <article class="card">
+          <h4>Algorithms & Data Structures</h4>
+          <p>
+            Course planning system optimized using efficient data structures
+            with clear runtime justification.
+          </p>
+          <a href="https://github.com/JullianePamfilo" target="_blank">View Source →</a>
+        </article>
+
+        <article class="card">
+          <h4>Databases</h4>
+          <p>
+            Secure CRUD module with validation, error handling,
+            and separation of data access logic.
+          </p>
+          <a href="https://github.com/JullianePamfilo" target="_blank">View Source →</a>
+        </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= ABOUT ================= -->
-<section id="about" class="section glass">
-  <div class="container">
-    <h2 class="section-title">Professional Overview</h2>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <h3>Contact</h3>
 
-    <p class="section-text">
-      Throughout the Computer Science program, I evolved from focusing solely on
-      correctness to engineering software that is modular, secure, and built for
-      long-term maintainability.
-    </p>
-
-    <p class="section-text">
-      This portfolio demonstrates that growth through enhanced artifacts aligned
-      with software design, algorithms and data structures, and databases.
-      Each artifact reflects deliberate design decisions and professional standards.
-    </p>
-  </div>
-</section>
-
-<!-- ================= ARTIFACTS ================= -->
-<section id="artifacts" class="section">
-  <div class="container">
-    <h2 class="section-title">Enhanced Artifacts</h2>
-
-    <div class="artifact-grid">
-
-      <article class="artifact-card">
-        <h3>Software Design & Engineering</h3>
-        <p>
-          Dashboard application enhanced for modularity, separation of concerns,
-          and clean architectural boundaries.
-        </p>
-        <span class="artifact-tag">Design</span>
-      </article>
-
-      <article class="artifact-card">
-        <h3>Algorithms & Data Structures</h3>
-        <p>
-          Course planning system optimized using appropriate data structures to
-          improve runtime performance and reliability.
-        </p>
-        <span class="artifact-tag">Algorithms</span>
-      </article>
-
-      <article class="artifact-card">
-        <h3>Databases</h3>
-        <p>
-          CRUD module strengthened with improved validation, error handling,
-          and data integrity safeguards.
-        </p>
-        <span class="artifact-tag">Databases</span>
-      </article>
-
+      <div class="contact-links">
+        <a href="mailto:pamfilojulliane@yahoo.com">Email</a>
+        <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231" target="_blank">LinkedIn</a>
+        <a href="https://www.youtube.com" target="_blank">YouTube</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= CODE REVIEW ================= -->
-<section id="review" class="section glass">
-  <div class="container">
-    <h2 class="section-title">Informal Code Review</h2>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2025 Julliane Pamfilo</p>
+  </footer>
 
-    <p class="section-text">
-      This video provides a walkthrough of my original artifacts, identified
-      limitations, and the rationale behind each enhancement.
-    </p>
-
-    <a class="primary-btn"
-       href="https://youtu.be/9Xwo-AlOMqo"
-       target="_blank"
-       rel="noopener noreferrer">
-      Watch on YouTube
-    </a>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="section">
-  <div class="container">
-    <h2 class="section-title">Connect</h2>
-
-    <div class="contact-grid">
-      <a href="https://www.linkedin.com/in/julliane-pamfilo-750266231"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="contact-card">
-        LinkedIn
-      </a>
-
-      <a href="mailto:pamfilojulliane@yahoo.com"
-         class="contact-card">
-        Email
-      </a>
-
-      <a href="https://youtu.be/9Xwo-AlOMqo"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="contact-card">
-        YouTube
-      </a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer class="footer">
-  <p>© 2025 Julliane Pamfilo</p>
-</footer>
-
-<script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
