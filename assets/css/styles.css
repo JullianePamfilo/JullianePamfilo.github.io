@@ -1,33 +1,54 @@
-/* ================= RESET ================= */
+/* =====================================================
+   Global Variables & Reset
+   ===================================================== */
+
+:root {
+  --bg-main: #0b0f1a;
+  --bg-soft: #11162a;
+  --card-bg: #161c35;
+
+  --text-main: #e6e9f5;
+  --text-muted: #a6acd6;
+
+  --accent: #6c8cff;
+  --accent-soft: rgba(108, 140, 255, 0.15);
+
+  --border: rgba(255, 255, 255, 0.08);
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* ================= BASE ================= */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter", sans-serif;
-  background:
-    radial-gradient(circle at top, #151b35 0%, #05070f 65%);
-  color: #eaeaf0;
-  line-height: 1.7;
-  overflow-x: hidden;
+  background: radial-gradient(1200px 600px at 50% -200px, #1a2355, var(--bg-main));
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
-/* ================= HEADER ================= */
-.site-header {
-  position: fixed;
+/* =====================================================
+   Navigation
+   ===================================================== */
+
+.nav {
+  position: sticky;
   top: 0;
-  width: 100%;
-  background: rgba(6, 8, 18, 0.75);
-  backdrop-filter: blur(14px);
-  z-index: 1000;
+  z-index: 100;
+  background: rgba(11, 15, 26, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -35,189 +56,177 @@ body {
 }
 
 .logo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.3rem;
-  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent);
 }
 
-.nav-links a,
-.nav-links button {
+.nav-links a {
   margin-left: 1.5rem;
-  font-size: 0.85rem;
-  background: none;
-  border: none;
-  color: #eaeaf0;
-  cursor: pointer;
+  color: var(--text-muted);
   text-decoration: none;
+  font-weight: 500;
 }
 
-/* ================= HERO ================= */
+.nav-links a:hover {
+  color: var(--text-main);
+}
+
+/* =====================================================
+   Hero Section
+   ===================================================== */
+
 .hero {
-  min-height: 100vh;
-  padding: 9rem 2rem 4rem;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   text-align: center;
+  padding: 2rem;
 }
 
 .hero-content {
-  max-width: 800px;
-  z-index: 1;
-}
-
-.hero-name {
-  letter-spacing: 3px;
-  font-size: 0.8rem;
-  color: #9aa5ff;
+  max-width: 900px;
 }
 
 .hero h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 3.4rem;
-  margin: 0.5rem 0 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
 }
 
 .hero-subtext {
-  color: #cfd3ff;
-  margin: 1.5rem auto 2.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  color: var(--text-muted);
 }
 
-.hero-actions {
+.hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-/* Glow effect */
-.hero-glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background:
-    radial-gradient(circle, rgba(140,160,255,0.35), transparent 65%);
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0;
-}
+/* =====================================================
+   Buttons
+   ===================================================== */
 
-/* ================= BUTTONS ================= */
 .btn {
-  padding: 0.75rem 1.6rem;
+  padding: 0.75rem 1.75rem;
   border-radius: 999px;
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #9aa5ff, #6c79ff);
-  color: #05070f;
-  box-shadow: 0 10px 25px rgba(140,160,255,0.35);
-  text-decoration: none;
+  background: linear-gradient(135deg, var(--accent), #8fa4ff);
+  color: #0b0f1a;
 }
 
 .btn.primary:hover {
   transform: translateY(-2px);
 }
 
-.btn.ghost {
-  border: 1px solid rgba(255,255,255,0.35);
-  background: none;
-  color: #eaeaf0;
+.btn.secondary {
+  border: 1px solid var(--border);
+  color: var(--text-main);
 }
 
-/* ================= SECTIONS ================= */
+.btn.secondary:hover {
+  background: var(--accent-soft);
+}
+
+/* =====================================================
+   Sections
+   ===================================================== */
+
 .section {
   max-width: 1100px;
-  margin: auto;
-  padding: 6rem 2rem;
+  margin: 0 auto;
+  padding: 5rem 2rem;
 }
 
-.section-title {
-  font-family: "Playfair Display", serif;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
+.section h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* ================= ARTIFACTS ================= */
-.artifact-grid {
+/* =====================================================
+   Cards
+   ===================================================== */
+
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
-.artifact-card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  padding: 2.2rem;
-  border-radius: 20px;
-  transition: transform 0.3s ease;
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: all 0.25s ease;
 }
 
-.artifact-card:hover {
+.card:hover {
   transform: translateY(-6px);
+  border-color: var(--accent);
 }
 
-.artifact-card h3 {
-  margin-bottom: 1rem;
+.card h4 {
+  margin-bottom: 0.75rem;
 }
 
-/* ================= FOOTER ================= */
-.site-footer {
+/* =====================================================
+   Resume
+   ===================================================== */
+
+.resume-section {
+  background: linear-gradient(180deg, transparent, var(--bg-soft));
+}
+
+.resume-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.resume-images img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* =====================================================
+   Footer
+   ===================================================== */
+
+.footer {
   text-align: center;
-  padding: 3rem 1rem;
-  font-size: 0.8rem;
-  color: #9aa5ff;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
 }
 
-.site-footer a {
-  color: #9aa5ff;
+.footer a {
+  color: var(--accent);
   text-decoration: none;
 }
 
-/* ================= RESUME MODAL ================= */
-.resume-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(4, 6, 12, 0.9);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-}
-
-.resume-modal.active {
-  display: flex;
-}
-
-.resume-content {
-  background: #0b1020;
-  padding: 2.5rem;
-  max-width: 900px;
-  max-height: 90vh;
-  overflow-y: auto;
-  border-radius: 24px;
-  position: relative;
-}
-
-.resume-content img {
-  width: 100%;
-  margin-top: 2rem;
-  border-radius: 14px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
-}
-
-.close-btn {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
+.footer a:hover {
+  text-decoration: underline;
 }
 
