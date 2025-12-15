@@ -1,71 +1,18 @@
-/**
- * main.js
- * I use this file to progressively enhance the portfolio
- * without ever hiding core content.
- */
+// I use this small script to handle theme toggling cleanly.
+// I persist the user’s preference so the experience feels intentional.
 
-document.addEventListener("DOMContentLoaded", () => {
+const toggle = document.getElementById("themeToggle");
+const body = document.body;
 
-  /* ===============================
-     THEME TOGGLE
-  ================================ */
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+  body.classList.add("light");
+}
 
-  const toggleBtn = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("theme");
-
-  if (savedTheme) {
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  }
-
-  toggleBtn?.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme");
-    const next = current === "light" ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-  });
-
-  /* ===============================
-     SECTION REVEAL (SAFE)
-  ================================ */
-
-  const sections = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
+toggle.addEventListener("click", () => {
+  body.classList.toggle("light");
+  localStorage.setItem(
+    "theme",
+    body.classList.contains("light") ? "light" : "dark"
   );
-
-  sections.forEach(section => observer.observe(section));
-
-  /* ===============================
-     ACTIVE NAV LINK
-  ================================ */
-
-  const navLinks = document.querySelectorAll(".nav a");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(section => {
-      const top = section.offsetTop - 120;
-      if (window.scrollY >= top) {
-        current = section.id;
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
-    });
-  });
-
 });
